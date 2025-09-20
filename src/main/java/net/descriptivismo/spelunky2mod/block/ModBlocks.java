@@ -22,9 +22,8 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Spelunky2Mod.MODID);
 
     public static final RegistryObject<Block> DWELLING_ROCK = registerBlock("dwelling_rock",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
-                    .strength(1.0F, 6.0F),
-                    UniformInt.of(0,0)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(1.0F, 6.0F)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {
