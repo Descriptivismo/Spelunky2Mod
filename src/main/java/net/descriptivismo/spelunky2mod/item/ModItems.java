@@ -14,6 +14,9 @@ public class ModItems {
     public static final RegistryObject<Item> GOLD_KEY = ITEMS.register("gold_key",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> SKELETON_KEY = ITEMS.register("skeleton_key",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

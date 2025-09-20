@@ -55,6 +55,7 @@ public class Spelunky2Mod
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
         {
             event.accept(ModItems.GOLD_KEY);
+            event.accept(ModItems.SKELETON_KEY);
         }
     }
 
