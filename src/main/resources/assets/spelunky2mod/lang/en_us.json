@@ -1,5 +1,11 @@
 {
   "item.spelunky2mod.gold_key": "Gold Key",
   "item.spelunky2mod.skeleton_key": "Skeleton Key",
-  "item.minecraft.iron_pickaxe": "Mattock"
+  "item.minecraft.iron_pickaxe": "Mattock",
+
+  "block.spelunky2mod.dwelling_rock": "Dwelling Rock",
+
+  "creativetab.spelunky_items_tab": "Spelunky Items",
+  "creativetab.spelunky_blocks_tab": "Spelunky Blocks",
+  "creativetab.spelunky_creatures_tab": "Spelunky Creatures"
 }
