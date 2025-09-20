@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "spelunky2mod:item/gold_key"
+  }
+}

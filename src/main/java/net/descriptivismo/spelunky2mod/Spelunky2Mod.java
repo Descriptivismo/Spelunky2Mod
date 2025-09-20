@@ -1,6 +1,8 @@
 package net.descriptivismo.spelunky2mod;
 
 import com.mojang.logging.LogUtils;
+import net.descriptivismo.spelunky2mod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -27,6 +29,8 @@ public class Spelunky2Mod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -48,7 +52,10 @@ public class Spelunky2Mod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+        {
+            event.accept(ModItems.GOLD_KEY);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
