@@ -17,6 +17,9 @@ public class ModItems {
     public static final RegistryObject<Item> SKELETON_KEY = ITEMS.register("skeleton_key",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> UDJAT_EYE = ITEMS.register("udjat_eye",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

@@ -22,12 +22,13 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SKELETON_KEY.get());
                         output.accept(ModItems.GOLD_KEY.get());
+                        output.accept(ModItems.UDJAT_EYE.get());
                     })
                     .build());
 
     public static final RegistryObject<CreativeModeTab> SPELUNKY_BLOCKS_TAB = CREATIVE_MODE_TABS.register("spelunky_blocks_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.SKELETON_KEY.get()))
+                    .icon(() -> new ItemStack(ModBlocks.DWELLING_ROCK.get()))
                     .title(Component.translatable("creativetab.spelunky_blocks_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.DWELLING_ROCK.get());
