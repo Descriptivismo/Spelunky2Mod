@@ -29,7 +29,7 @@ public class ModBlocks {
             ));
     public static final RegistryObject<Block> UDJAT_CHEST = registerBlock("udjat_chest",
             () -> new UdjatChestBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
-                    .strength(-1.0F, 3600000.0F)
+                    .strength(3600000.0F, 3600000.0F)
                     .noLootTable()
                     .noOcclusion()
             ));
