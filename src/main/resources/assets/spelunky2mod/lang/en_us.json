@@ -6,11 +6,13 @@
 
   "block.spelunky2mod.dwelling_rock": "Dwelling Rock",
   "block.spelunky2mod.dwelling_wood": "Dwelling Wood",
+  "block.spelunky2mod.bone_block": "Bone Block",
   "block.spelunky2mod.udjat_chest": "Udjat Chest",
 
   "creativetab.spelunky_items_tab": "Spelunky Items",
   "creativetab.spelunky_blocks_tab": "Spelunky Blocks",
   "creativetab.spelunky_creatures_tab": "Spelunky Creatures",
 
-  "sounds.spelunky2mod.unlock": "Chest Unlocked"
+  "sounds.spelunky2mod.unlock": "Chest Unlocked",
+  "sounds.spelunky2mod.bone_block_break": "Bone Block Shatters"
 }

@@ -4,5 +4,45 @@
     "sounds": [
       "spelunky2mod:unlock"
     ]
+  },
+  "bone_block_break": {
+    "subtitle": "sounds.spelunky2mod.bone_drop_rattle",
+    "sounds": [
+      "spelunky2mod:bone_block_break"
+    ]
+  },
+  "bone_block_step": {
+    "sounds": [
+      "spelunky2mod:bone_block_step0",
+      "spelunky2mod:bone_block_step1",
+      "spelunky2mod:bone_block_step2",
+      "spelunky2mod:bone_block_step3",
+      "spelunky2mod:bone_block_step4",
+      "spelunky2mod:bone_block_step5"
+    ]
+  },
+  "bone_block_hit": {
+    "sounds": [
+      "spelunky2mod:bone_block_step0",
+      "spelunky2mod:bone_block_step1",
+      "spelunky2mod:bone_block_step2",
+      "spelunky2mod:bone_block_step3",
+      "spelunky2mod:bone_block_step4",
+      "spelunky2mod:bone_block_step5"
+    ]
+  },
+  "bone_block_place": {
+    "sounds": [
+      "spelunky2mod:bone_block_place0",
+      "spelunky2mod:bone_block_place1",
+      "spelunky2mod:bone_block_place2"
+    ]
+  },
+  "bone_block_fall": {
+    "sounds": [
+      "spelunky2mod:bone_block_place0",
+      "spelunky2mod:bone_block_place1",
+      "spelunky2mod:bone_block_place2"
+    ]
   }
 }

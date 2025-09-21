@@ -16,6 +16,16 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> UNLOCK = registerSoundEvents("unlock");
 
+    public static final RegistryObject<SoundEvent> BONE_BLOCK_BREAK = registerSoundEvents("bone_block_break");
+    public static final RegistryObject<SoundEvent> BONE_BLOCK_STEP = registerSoundEvents("bone_block_step");
+    public static final RegistryObject<SoundEvent> BONE_BLOCK_FALL = registerSoundEvents("bone_block_fall");
+    public static final RegistryObject<SoundEvent> BONE_BLOCK_PLACE = registerSoundEvents("bone_block_place");
+    public static final RegistryObject<SoundEvent> BONE_BLOCK_HIT = registerSoundEvents("bone_block_hit");
+
+    public static final ForgeSoundType BONE_BLOCK_SOUNDS = new ForgeSoundType(1f, 1f,
+            ModSounds.BONE_BLOCK_BREAK, ModSounds.BONE_BLOCK_STEP, ModSounds.BONE_BLOCK_PLACE,
+            ModSounds.BONE_BLOCK_HIT, ModSounds.BONE_BLOCK_FALL);
+
     private static RegistryObject<SoundEvent> registerSoundEvents(String name)
     {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(

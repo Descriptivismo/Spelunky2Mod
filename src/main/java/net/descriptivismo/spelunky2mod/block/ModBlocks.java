@@ -1,8 +1,10 @@
 package net.descriptivismo.spelunky2mod.block;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
+import net.descriptivismo.spelunky2mod.block.custom.BoneBlock;
 import net.descriptivismo.spelunky2mod.block.custom.UdjatChestBlock;
 import net.descriptivismo.spelunky2mod.item.ModItems;
+import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -35,6 +37,11 @@ public class ModBlocks {
             ));
     public static final RegistryObject<Block> DWELLING_WOOD = registerBlock("dwelling_wood",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+            ));
+    public static final RegistryObject<Block> BONE_BLOCK = registerBlock("bone_block",
+            () -> new BoneBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)
+                    .strength(0.1f, 1.0f)
+                    .sound(ModSounds.BONE_BLOCK_SOUNDS)
             ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

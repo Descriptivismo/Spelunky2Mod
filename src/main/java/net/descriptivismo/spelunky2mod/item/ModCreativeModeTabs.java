@@ -33,6 +33,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.DWELLING_ROCK.get());
                         output.accept(ModBlocks.DWELLING_WOOD.get());
+                        output.accept(ModBlocks.BONE_BLOCK.get());
                         output.accept(ModBlocks.UDJAT_CHEST.get());
                     })
                     .build());

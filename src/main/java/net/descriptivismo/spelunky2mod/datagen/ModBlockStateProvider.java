@@ -20,10 +20,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         cubeBottomTopWithItem(ModBlocks.DWELLING_ROCK);
         cubeBottomTopWithItem(ModBlocks.DWELLING_WOOD);
+        cubeAllWithItem(ModBlocks.BONE_BLOCK);
     }
 
     private ResourceLocation extend(ResourceLocation rl, String suffix) {
         return ResourceLocation.fromNamespaceAndPath(rl.getNamespace(), rl.getPath() + suffix);
+    }
+
+    private void cubeAllWithItem(RegistryObject<Block> blockRegistryObject)
+    {
+        simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
     private void cubeBottomTopWithItem(RegistryObject<Block> blockRegistryObject)
