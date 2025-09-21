@@ -1,6 +1,7 @@
 package net.descriptivismo.spelunky2mod.block;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
+import net.descriptivismo.spelunky2mod.block.custom.UdjatChestBlock;
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -27,7 +28,7 @@ public class ModBlocks {
                     .strength(1.0F, 6.0F)
             ));
     public static final RegistryObject<Block> UDJAT_CHEST = registerBlock("udjat_chest",
-            () -> new GravelBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
+            () -> new UdjatChestBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
                     .strength(-1.0F, 3600000.0F)
                     .noLootTable()
                     .noOcclusion()
