@@ -1,0 +1,8 @@
+{
+  "unlock": {
+    "subtitle": "sounds.spelunky2mod.unlock",
+    "sounds": [
+      "spelunky2mod:unlock"
+    ]
+  }
+}

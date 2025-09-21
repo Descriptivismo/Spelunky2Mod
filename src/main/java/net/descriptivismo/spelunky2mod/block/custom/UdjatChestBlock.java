@@ -1,8 +1,10 @@
 package net.descriptivismo.spelunky2mod.block.custom;
 
 import net.descriptivismo.spelunky2mod.item.ModItems;
+import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -67,7 +69,8 @@ public class UdjatChestBlock extends FallingBlock {
     private void dropUdjatEye(BlockState pState, Level pLevel, BlockPos pPos)
     {
         pLevel.setBlock(pPos, pState.setValue(OPEN, Boolean.valueOf(true)), 1 | 2);
-        // play sound
+        pLevel.playSeededSound(null, pPos.getX(), pPos.getY(), pPos.getZ(), ModSounds.UNLOCK.get(),
+                SoundSource.BLOCKS, 1f, 1f, 0);
         popResource(pLevel, pPos, new ItemStack(ModItems.UDJAT_EYE.get(), 1));
     }
 }
