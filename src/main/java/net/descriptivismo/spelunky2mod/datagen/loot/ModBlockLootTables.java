@@ -28,6 +28,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.add(ModBlocks.DWELLING_ROCK.get(),
                 block -> createDwellingRockDrops(ModBlocks.DWELLING_ROCK.get()));
+        this.add(ModBlocks.DWELLING_WOOD.get(),
+                block -> createSilkTouchOnlyTable(ModBlocks.DWELLING_WOOD.get()));
     }
 
     protected LootTable.Builder createDwellingRockDrops(Block pBlock) {

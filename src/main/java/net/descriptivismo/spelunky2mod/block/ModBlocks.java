@@ -33,6 +33,9 @@ public class ModBlocks {
                     .noLootTable()
                     .noOcclusion()
             ));
+    public static final RegistryObject<Block> DWELLING_WOOD = registerBlock("dwelling_wood",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+            ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {

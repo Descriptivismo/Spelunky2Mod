@@ -1,4 +1,7 @@
-// 1.20.1	2025-09-20T22:01:54.0062638	Block States: spelunky2mod
+// 1.20.1	2025-09-21T11:14:57.6963781	Block States: spelunky2mod
 7ca9e73b534347cb22328dd1ca8153d45af4eb8e assets/spelunky2mod/blockstates/dwelling_rock.json
+7a6ea51efcd1983c76d5781d9ceaf87e87b9d174 assets/spelunky2mod/blockstates/dwelling_wood.json
 a74b150b5daafbfb397485c67b5b8e84a63ac9f1 assets/spelunky2mod/models/block/dwelling_rock.json
+e75656bf9a1fe78b50a19baf9ceb4dcb58df5411 assets/spelunky2mod/models/block/dwelling_wood.json
 bc4efaedeb3f4373903f0abcaece9cbdda3a72b4 assets/spelunky2mod/models/item/dwelling_rock.json
+ad7cf60de3647daf7b85d9d365c54a2f56affd3c assets/spelunky2mod/models/item/dwelling_wood.json

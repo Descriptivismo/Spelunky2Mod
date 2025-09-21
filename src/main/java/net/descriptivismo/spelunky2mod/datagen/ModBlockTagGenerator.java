@@ -21,5 +21,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.DWELLING_ROCK.get());
+        this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.DWELLING_WOOD.get());
     }
 }

@@ -19,6 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         cubeBottomTopWithItem(ModBlocks.DWELLING_ROCK);
+        cubeBottomTopWithItem(ModBlocks.DWELLING_WOOD);
     }
 
     private ResourceLocation extend(ResourceLocation rl, String suffix) {
