@@ -6,7 +6,7 @@
     ]
   },
   "bone_block_break": {
-    "subtitle": "sounds.spelunky2mod.bone_drop_rattle",
+    "subtitle": "sounds.spelunky2mod.bone_drop_break",
     "sounds": [
       "spelunky2mod:bone_block_break"
     ]
