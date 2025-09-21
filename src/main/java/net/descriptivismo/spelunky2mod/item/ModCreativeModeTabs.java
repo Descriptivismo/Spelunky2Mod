@@ -32,6 +32,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.spelunky_blocks_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.DWELLING_ROCK.get());
+                        output.accept(ModBlocks.UDJAT_CHEST.get());
                     })
                     .build());
 

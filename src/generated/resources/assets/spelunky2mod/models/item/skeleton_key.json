@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spelunky2mod:item/skeleton_key"
+  }
+}
