@@ -22,6 +22,8 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> BONE_BLOCK_PLACE = registerSoundEvents("bone_block_place");
     public static final RegistryObject<SoundEvent> BONE_BLOCK_HIT = registerSoundEvents("bone_block_hit");
 
+    public static final RegistryObject<SoundEvent> ARROW_TRAP_FIRE = registerSoundEvents("arrow_trap_fire");
+
     public static final ForgeSoundType BONE_BLOCK_SOUNDS = new ForgeSoundType(1f, 1f,
             ModSounds.BONE_BLOCK_BREAK, ModSounds.BONE_BLOCK_STEP, ModSounds.BONE_BLOCK_PLACE,
             ModSounds.BONE_BLOCK_HIT, ModSounds.BONE_BLOCK_FALL);

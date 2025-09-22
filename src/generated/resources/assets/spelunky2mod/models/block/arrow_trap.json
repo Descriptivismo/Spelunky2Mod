@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "spelunky2mod:block/arrow_trap_bottom",
+    "east": "spelunky2mod:block/arrow_trap_right",
+    "north": "spelunky2mod:block/arrow_trap_front",
+    "particle": "spelunky2mod:block/arrow_trap_top",
+    "south": "spelunky2mod:block/arrow_trap_back",
+    "up": "spelunky2mod:block/arrow_trap_top",
+    "west": "spelunky2mod:block/arrow_trap_left"
+  }
+}

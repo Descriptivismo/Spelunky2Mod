@@ -6,7 +6,7 @@
     ]
   },
   "bone_block_break": {
-    "subtitle": "sounds.spelunky2mod.bone_drop_break",
+    "subtitle": "sounds.spelunky2mod.bone_block_break",
     "sounds": [
       "spelunky2mod:bone_block_break"
     ]
@@ -43,6 +43,12 @@
       "spelunky2mod:bone_block_place0",
       "spelunky2mod:bone_block_place1",
       "spelunky2mod:bone_block_place2"
+    ]
+  },
+  "arrow_trap_fire": {
+    "subtitle": "sounds.spelunky2mod.arrow_trap_fire",
+    "sounds": [
+      "spelunky2mod:arrow_trap_fire"
     ]
   }
 }
