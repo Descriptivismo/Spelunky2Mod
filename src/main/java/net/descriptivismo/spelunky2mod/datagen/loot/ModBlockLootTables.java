@@ -40,6 +40,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createSilkTouchOnlyTable(ModBlocks.DWELLING_WOOD.get()));
         this.add(ModBlocks.BONE_BLOCK.get(),
                 block -> createSpecialItemDrops(ModBlocks.BONE_BLOCK.get(), Items.SKELETON_SKULL, ModItems.SKELETON_KEY.get()));
+        this.add(ModBlocks.ARROW_TRAP.get(),
+                block -> createSilkTouchOnlyTable((ModBlocks.ARROW_TRAP.get())));
     }
 
     protected LootTable.Builder createDwellingRockDrops(Block pBlock) {

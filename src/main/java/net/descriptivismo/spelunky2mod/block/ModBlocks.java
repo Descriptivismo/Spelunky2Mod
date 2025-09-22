@@ -1,6 +1,7 @@
 package net.descriptivismo.spelunky2mod.block;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
+import net.descriptivismo.spelunky2mod.block.custom.ArrowTrapBlock;
 import net.descriptivismo.spelunky2mod.block.custom.BoneBlock;
 import net.descriptivismo.spelunky2mod.block.custom.UdjatChestBlock;
 import net.descriptivismo.spelunky2mod.item.ModItems;
@@ -42,6 +43,9 @@ public class ModBlocks {
             () -> new BoneBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)
                     .strength(0.1f, 1.0f)
                     .sound(ModSounds.BONE_BLOCK_SOUNDS)
+            ));
+    public static final RegistryObject<Block> ARROW_TRAP = registerBlock("arrow_trap",
+            () -> new ArrowTrapBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
             ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

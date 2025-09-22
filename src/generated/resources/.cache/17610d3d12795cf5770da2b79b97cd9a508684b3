@@ -1,10 +1,13 @@
-// 1.20.1	2025-09-21T14:54:55.5301557	Block States: spelunky2mod
+// 1.20.1	2025-09-21T23:38:56.918547	Block States: spelunky2mod
+732fd11d3371bcd5441b3c878fc602133dcc7e51 assets/spelunky2mod/blockstates/arrow_trap.json
 a305e077ae0d7ba0fb6c08cfd7e0793aacb7cde0 assets/spelunky2mod/blockstates/bone_block.json
 7ca9e73b534347cb22328dd1ca8153d45af4eb8e assets/spelunky2mod/blockstates/dwelling_rock.json
 7a6ea51efcd1983c76d5781d9ceaf87e87b9d174 assets/spelunky2mod/blockstates/dwelling_wood.json
+35f77fd3be10354ef271a02c47f788478d82e96d assets/spelunky2mod/models/block/arrow_trap.json
 d71755a9ab763e0c76eb21c84e7bd3765aa133bb assets/spelunky2mod/models/block/bone_block.json
 a74b150b5daafbfb397485c67b5b8e84a63ac9f1 assets/spelunky2mod/models/block/dwelling_rock.json
 e75656bf9a1fe78b50a19baf9ceb4dcb58df5411 assets/spelunky2mod/models/block/dwelling_wood.json
+720e121e2993ff45d88dbf401e5b7c50bb8bf861 assets/spelunky2mod/models/item/arrow_trap.json
 1d3c4fc6c4905acc068ed1ae5ce62c230c30b9e9 assets/spelunky2mod/models/item/bone_block.json
 bc4efaedeb3f4373903f0abcaece9cbdda3a72b4 assets/spelunky2mod/models/item/dwelling_rock.json
 ad7cf60de3647daf7b85d9d365c54a2f56affd3c assets/spelunky2mod/models/item/dwelling_wood.json
