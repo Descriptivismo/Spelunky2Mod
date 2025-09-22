@@ -27,6 +27,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.ticks.ScheduledTick;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -68,16 +69,27 @@ public class ArrowTrapBlock extends Block {
         if (pState.getValue(TRIGGERED))
             return;
 
-        Direction dir = pState.getValue(FACING);
-        AABB detectionBox = new AABB(
-                dir.getStepZ() * -0.25d,
-                -0.25d,
-                dir.getStepX() * -0.25d,
-                dir.getStepZ() * 0.25d + dir.getStepX() * 6.5d,
-                0.25d,
-                dir.getStepX() * 0.25d + dir.getStepZ() * 6.5d)
-                .move(pPos)
-                .move(new Vec3(0.5d, 0.5d, 0.5d));
+        double detectionDist = 6.5d;
+        Vec3 center = pPos.getCenter();
+
+        AABB detectionBox = getDetectionBox(pState.getValue(FACING), center, detectionDist);
+
+        Iterable<VoxelShape> blockCollisions = pLevel.getBlockCollisions(null, detectionBox);
+        double closestBlockDist = 100d;
+
+        for (VoxelShape col: blockCollisions)
+        {
+            if (col.bounds().getCenter().equals(center))
+                continue;
+            double dist = col.closestPointTo(center).get().distanceTo(center);
+            if (dist < closestBlockDist)
+                closestBlockDist = dist;
+        }
+
+        if (closestBlockDist < detectionDist)
+        {
+            detectionBox = getDetectionBox(pState.getValue(FACING), center, closestBlockDist);
+        }
 
         if (!pLevel.getEntitiesOfClass(Entity.class, detectionBox, EntitySelector.NO_SPECTATORS).isEmpty())
         {
@@ -88,6 +100,19 @@ public class ArrowTrapBlock extends Block {
         {
             pLevel.scheduleTick(pPos, this, 1);
         }
+    }
+
+    private AABB getDetectionBox(Direction dir, Vec3 center, double detectionDist)
+    {
+        AABB detectionBox = new AABB(
+                dir.getStepZ() * -0.25d,
+                -0.25d,
+                dir.getStepX() * -0.25d,
+                dir.getStepZ() * 0.25d + dir.getStepX() * detectionDist,
+                0.25d,
+                dir.getStepX() * 0.25d + dir.getStepZ() * detectionDist)
+                .move(center);
+        return detectionBox;
     }
 
     private void fireArrow(BlockState pState, Level pLevel, BlockPos pPos) {
