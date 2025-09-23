@@ -46,7 +46,7 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.SKELETON_KEY.get()))
                     .title(Component.translatable("creativetab.spelunky_creatures_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-
+                        output.accept(ModItems.SNAKE_SPAWN_EGG.get());
                     })
                     .build());
 

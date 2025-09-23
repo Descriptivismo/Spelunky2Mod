@@ -3,9 +3,12 @@ package net.descriptivismo.spelunky2mod;
 import com.mojang.logging.LogUtils;
 import net.descriptivismo.spelunky2mod.block.ModBlocks;
 import net.descriptivismo.spelunky2mod.block.entity.ModBlockEntities;
+import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
+import net.descriptivismo.spelunky2mod.block.entity.client.SnakeRenderer;
 import net.descriptivismo.spelunky2mod.item.ModCreativeModeTabs;
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,6 +41,7 @@ public class Spelunky2Mod
         ModBlocks.register(modEventBus);
         ModSounds.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -83,7 +87,7 @@ public class Spelunky2Mod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            EntityRenderers.register(ModEntities.SNAKE.get(), SnakeRenderer::new);
         }
     }
 }

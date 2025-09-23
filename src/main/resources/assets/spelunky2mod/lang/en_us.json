@@ -2,6 +2,7 @@
   "item.spelunky2mod.gold_key": "Gold Key",
   "item.spelunky2mod.skeleton_key": "Skeleton Key",
   "item.spelunky2mod.udjat_eye": "Udjat Eye",
+  "item.spelunky2mod.snake_spawn_egg": "Snake Spawn Egg",
   "item.minecraft.iron_pickaxe": "Mattock",
 
   "block.spelunky2mod.dwelling_rock": "Dwelling Rock",
@@ -12,11 +13,16 @@
   "block.spelunky2mod.crate": "Crate",
   "block.spelunky2mod.item_pickup": "Item Pickup Slot",
 
+  "entity.spelunky2mod.snake": "Snake",
+
   "creativetab.spelunky_items_tab": "Spelunky Items",
   "creativetab.spelunky_blocks_tab": "Spelunky Blocks",
   "creativetab.spelunky_creatures_tab": "Spelunky Creatures",
 
   "sounds.spelunky2mod.unlock": "Chest Unlocked",
   "sounds.spelunky2mod.bone_block_break": "Bone Block Shatters",
-  "sounds.spelunky2mod.arrow_trap_fire": "Arrow Trap Fires"
+  "sounds.spelunky2mod.arrow_trap_fire": "Arrow Trap Fires",
+  "sounds.spelunky2mod.crate_break": "Crate Opens",
+  "sounds.spelunky2mod.snake_die": "Snake Hurts",
+  "sounds.spelunky2mod.snake_attack": "Snake Bites"
 }

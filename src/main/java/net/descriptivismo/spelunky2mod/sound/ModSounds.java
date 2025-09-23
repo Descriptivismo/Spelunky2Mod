@@ -30,6 +30,9 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> CRATE_BREAK = registerSoundEvents("crate_break");
 
+    public static final RegistryObject<SoundEvent> SNAKE_DIE = registerSoundEvents("snake_die");
+    public static final RegistryObject<SoundEvent> SNAKE_ATTACK = registerSoundEvents("snake_attack");
+
     public static final ForgeSoundType BONE_BLOCK_SOUNDS = new ForgeSoundType(1f, 1f,
             ModSounds.BONE_BLOCK_BREAK, ModSounds.BONE_BLOCK_STEP, ModSounds.BONE_BLOCK_PLACE,
             ModSounds.BONE_BLOCK_HIT, ModSounds.BONE_BLOCK_FALL);
@@ -40,6 +43,7 @@ public class ModSounds {
             ForgeRegistries.SOUND_EVENTS.getDelegateOrThrow(SoundEvents.WOOD_HIT),
             ForgeRegistries.SOUND_EVENTS.getDelegateOrThrow(SoundEvents.WOOD_FALL)
             );
+
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name)
     {
