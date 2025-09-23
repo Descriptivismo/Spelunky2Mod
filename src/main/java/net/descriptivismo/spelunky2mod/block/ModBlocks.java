@@ -3,6 +3,7 @@ package net.descriptivismo.spelunky2mod.block;
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.custom.ArrowTrapBlock;
 import net.descriptivismo.spelunky2mod.block.custom.BoneBlock;
+import net.descriptivismo.spelunky2mod.block.custom.CrateBlock;
 import net.descriptivismo.spelunky2mod.block.custom.UdjatChestBlock;
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
@@ -41,11 +42,17 @@ public class ModBlocks {
             ));
     public static final RegistryObject<Block> BONE_BLOCK = registerBlock("bone_block",
             () -> new BoneBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)
-                    .strength(0.1f, 1.0f)
+                    .strength(0.01f, 1.0f)
                     .sound(ModSounds.BONE_BLOCK_SOUNDS)
             ));
     public static final RegistryObject<Block> ARROW_TRAP = registerBlock("arrow_trap",
             () -> new ArrowTrapBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+            ));
+    public static final RegistryObject<Block> CRATE = registerBlock("crate",
+            () -> new CrateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
+                    .strength(0.01f,1.0f)
+                    .sound(ModSounds.CRATE_SOUNDS)
+                    .noOcclusion()
             ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

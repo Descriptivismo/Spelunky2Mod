@@ -13,6 +13,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
@@ -42,6 +43,19 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createSpecialItemDrops(ModBlocks.BONE_BLOCK.get(), Items.SKELETON_SKULL, ModItems.SKELETON_KEY.get()));
         this.add(ModBlocks.ARROW_TRAP.get(),
                 block -> createSilkTouchOnlyTable((ModBlocks.ARROW_TRAP.get())));
+        this.add(ModBlocks.CRATE.get(),
+                block -> createCrateDrops(ModBlocks.CRATE.get()));
+    }
+
+    protected LootTable.Builder createCrateDrops(Block pBlock)
+    {
+        return createSilkTouchOnlyTable(pBlock)
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f))
+                        .when(HAS_NO_SILK_TOUCH)
+                        .add(LootItem.lootTableItem(Items.COMPASS).setWeight(398))
+                        .add(LootItem.lootTableItem(Items.IRON_PICKAXE).setWeight(97))
+                        .add(LootItem.lootTableItem(Items.CROSSBOW).setWeight(50))
+                );
     }
 
     protected LootTable.Builder createDwellingRockDrops(Block pBlock) {

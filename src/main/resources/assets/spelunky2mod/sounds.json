@@ -50,5 +50,12 @@
     "sounds": [
       "spelunky2mod:arrow_trap_fire"
     ]
+  },
+  "crate_break": {
+    "sounds": [
+      "spelunky2mod:crate_break_01",
+      "spelunky2mod:crate_break_02",
+      "spelunky2mod:crate_break_03"
+    ]
   }
 }
