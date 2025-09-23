@@ -31,6 +31,7 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.DWELLING_ROCK.get()))
                     .title(Component.translatable("creativetab.spelunky_blocks_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.ITEM_PICKUP.get());
                         output.accept(ModBlocks.DWELLING_ROCK.get());
                         output.accept(ModBlocks.DWELLING_WOOD.get());
                         output.accept(ModBlocks.BONE_BLOCK.get());

@@ -1,10 +1,7 @@
 package net.descriptivismo.spelunky2mod.block;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
-import net.descriptivismo.spelunky2mod.block.custom.ArrowTrapBlock;
-import net.descriptivismo.spelunky2mod.block.custom.BoneBlock;
-import net.descriptivismo.spelunky2mod.block.custom.CrateBlock;
-import net.descriptivismo.spelunky2mod.block.custom.UdjatChestBlock;
+import net.descriptivismo.spelunky2mod.block.custom.*;
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.core.BlockPos;
@@ -53,6 +50,13 @@ public class ModBlocks {
                     .strength(0.01f,1.0f)
                     .sound(ModSounds.CRATE_SOUNDS)
                     .noOcclusion()
+            ));
+    public static final RegistryObject<Block> ITEM_PICKUP = registerBlock("item_pickup",
+            () -> new ItemPickupBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .noOcclusion()
+                    .noLootTable()
+                    .noCollission()
+                    .strength(-1.0f, 3600000.0f)
             ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

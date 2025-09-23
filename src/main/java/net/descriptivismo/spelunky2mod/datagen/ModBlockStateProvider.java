@@ -29,6 +29,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         cubeBottomTopWithItem(ModBlocks.DWELLING_WOOD);
         cubeAllWithItem(ModBlocks.BONE_BLOCK);
         cubeDirectionalWithItem(ModBlocks.ARROW_TRAP);
+        cubeAllWithItem(ModBlocks.ITEM_PICKUP);
     }
 
     private ResourceLocation extend(ResourceLocation rl, String suffix) {

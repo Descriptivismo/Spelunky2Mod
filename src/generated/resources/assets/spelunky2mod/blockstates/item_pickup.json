@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "spelunky2mod:block/item_pickup"
+    }
+  }
+}

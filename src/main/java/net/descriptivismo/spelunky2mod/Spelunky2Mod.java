@@ -2,6 +2,7 @@ package net.descriptivismo.spelunky2mod;
 
 import com.mojang.logging.LogUtils;
 import net.descriptivismo.spelunky2mod.block.ModBlocks;
+import net.descriptivismo.spelunky2mod.block.entity.ModBlockEntities;
 import net.descriptivismo.spelunky2mod.item.ModCreativeModeTabs;
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
@@ -36,6 +37,7 @@ public class Spelunky2Mod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
