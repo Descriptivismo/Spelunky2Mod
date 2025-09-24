@@ -1,10 +1,14 @@
 package net.descriptivismo.spelunky2mod.block.entity.custom;
 
+import net.descriptivismo.spelunky2mod.block.entity.animations.ModAnimationDefinitions;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -13,6 +17,8 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 
 public class SnakeEntity extends Monster {
 
@@ -21,7 +27,9 @@ public class SnakeEntity extends Monster {
     }
 
     public final AnimationState idleAnimationState = new AnimationState();
+    public final AnimationState walkAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+    private Vec3 prevPos;
 
     @Override
     public void tick() {
@@ -35,15 +43,33 @@ public class SnakeEntity extends Monster {
 
     private void setUpAnimationStates()
     {
-        if (this.idleAnimationTimeout <= 0)
-        {
-            this.idleAnimationTimeout = this.random.nextInt(40) + 80;
-            this.idleAnimationState.start(this.tickCount);
-        }
-        else
-        {
-            --this.idleAnimationTimeout;
-        }
+        this.walkAnimationState.startIfStopped(this.tickCount);
+
+//        if (prevPos == null)
+//            prevPos = position();
+//        double dist = position().distanceTo(prevPos);
+//        prevPos = position();
+
+//        if (dist > 0.001d)
+//        {
+//            this.idleAnimationState.stop();
+//            this.walkAnimationState.startIfStopped(this.tickCount);
+//        }
+//        else
+//        {
+//            this.walkAnimationState.stop();
+//            this.idleAnimationState.startIfStopped(this.tickCount);
+//        }
+
+//        if (this.idleAnimationTimeout <= 0)
+//        {
+//            this.idleAnimationTimeout = this.random.nextInt(40) + 80;
+//            this.idleAnimationState.start(this.tickCount);
+//        }
+//        else
+//        {
+//            --this.idleAnimationTimeout;
+//        }
     }
 
     @Override
@@ -60,7 +86,7 @@ public class SnakeEntity extends Monster {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new WaterAvoidingRandomStrollGoal(this, 1.0d));
+        this.goalSelector.addGoal(0, new WaterAvoidingRandomStrollGoal(this, 1));
     }
 
     public static AttributeSupplier.Builder createAttributes()
@@ -68,7 +94,7 @@ public class SnakeEntity extends Monster {
         return Monster.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 4)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.MOVEMENT_SPEED, 0.15d)
+                .add(Attributes.MOVEMENT_SPEED, 0.125d)
                 .add(Attributes.FOLLOW_RANGE, 8)
                 ;
     }
@@ -81,5 +107,13 @@ public class SnakeEntity extends Monster {
     @Override
     protected SoundEvent getDeathSound() {
         return ModSounds.SNAKE_DIE.get();
+    }
+
+    public boolean shouldDropExperience() {
+        return false;
+    }
+
+    protected boolean shouldDropLoot() {
+        return false;
     }
 }
