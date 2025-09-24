@@ -68,6 +68,7 @@ public class SnakeModel<T extends Entity> extends HierarchicalModel<T> {
         //this.animateWalk(ModAnimationDefinitions.SNAKE_WALK, limbSwing, limbSwingAmount, 2f, 1f);
         this.animate(((SnakeEntity) entity).idleAnimationState, ModAnimationDefinitions.SNAKE_IDLE, ageInTicks, 1f);
         this.animate(((SnakeEntity) entity).walkAnimationState, ModAnimationDefinitions.SNAKE_WALK, ageInTicks, 1f);
+        this.animate(((SnakeEntity) entity).attackAnimationState, ModAnimationDefinitions.SNAKE_ATTACK, ageInTicks, 1f);
 
 	}
 

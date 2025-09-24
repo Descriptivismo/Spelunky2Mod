@@ -19,10 +19,10 @@
   "creativetab.spelunky_blocks_tab": "Spelunky Blocks",
   "creativetab.spelunky_creatures_tab": "Spelunky Creatures",
 
-  "sounds.spelunky2mod.unlock": "Chest Unlocked",
-  "sounds.spelunky2mod.bone_block_break": "Bone Block Shatters",
-  "sounds.spelunky2mod.arrow_trap_fire": "Arrow Trap Fires",
-  "sounds.spelunky2mod.crate_break": "Crate Opens",
-  "sounds.spelunky2mod.snake_die": "Snake Hurts",
-  "sounds.spelunky2mod.snake_attack": "Snake Bites"
+  "sounds.spelunky2mod.unlock": "Chest unlocks",
+  "sounds.spelunky2mod.bone_block_break": "Bone block shatters",
+  "sounds.spelunky2mod.arrow_trap_fire": "Arrow trap fires",
+  "sounds.spelunky2mod.crate_break": "Crate opens",
+  "sounds.spelunky2mod.snake_die": "Snake hurts",
+  "sounds.spelunky2mod.snake_attack": "Snake bites"
 }
