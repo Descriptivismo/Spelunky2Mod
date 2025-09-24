@@ -30,6 +30,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         cubeAllWithItem(ModBlocks.BONE_BLOCK);
         cubeDirectionalWithItem(ModBlocks.ARROW_TRAP);
         cubeAllWithItem(ModBlocks.ITEM_PICKUP);
+        simpleBlockWithItem(ModBlocks.GOLD_BAR.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gold_bar")));
     }
 
     private ResourceLocation extend(ResourceLocation rl, String suffix) {

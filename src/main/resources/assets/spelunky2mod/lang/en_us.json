@@ -12,6 +12,7 @@
   "block.spelunky2mod.arrow_trap": "Arrow Trap",
   "block.spelunky2mod.crate": "Crate",
   "block.spelunky2mod.item_pickup": "Item Pickup Slot",
+  "block.spelunky2mod.gold_bar": "Gold Bars",
 
   "entity.spelunky2mod.snake": "Snake",
 
@@ -24,5 +25,6 @@
   "sounds.spelunky2mod.arrow_trap_fire": "Arrow trap fires",
   "sounds.spelunky2mod.crate_break": "Crate opens",
   "sounds.spelunky2mod.snake_die": "Snake hurts",
-  "sounds.spelunky2mod.snake_attack": "Snake bites"
+  "sounds.spelunky2mod.snake_attack": "Snake bites",
+  "sounds.spelunky2mod.gold_collect": "Gold collected"
 }

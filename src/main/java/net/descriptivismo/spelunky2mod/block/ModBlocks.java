@@ -58,6 +58,12 @@ public class ModBlocks {
                     .noCollission()
                     .strength(-1.0f, 3600000.0f)
             ));
+    public static final RegistryObject<Block> GOLD_BAR = registerBlock("gold_bar",
+            () -> new TreasureBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)
+                    .strength(-1.0f, 1.0f)
+                    .noOcclusion()
+                    .noCollission()
+            ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {

@@ -72,5 +72,12 @@
     "sounds": [
       "spelunky2mod:snake_atk"
     ]
+  },
+  "gold_collect": {
+    "subtitle": "sounds.spelunky2mod.gold_collect",
+    "sounds": [
+      "spelunky2mod:gold01",
+      "spelunky2mod:gold02"
+    ]
   }
 }

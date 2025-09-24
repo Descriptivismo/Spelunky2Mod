@@ -37,13 +37,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BONE_BLOCK.get());
                         output.accept(ModBlocks.ARROW_TRAP.get());
                         output.accept(ModBlocks.CRATE.get());
+                        output.accept(ModBlocks.GOLD_BAR.get());
                         output.accept(ModBlocks.UDJAT_CHEST.get());
                     })
                     .build());
 
     public static final RegistryObject<CreativeModeTab> SPELUNKY_CREATURES_TAB = CREATIVE_MODE_TABS.register("spelunky_creatures_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.SKELETON_KEY.get()))
+                    .icon(() -> new ItemStack(ModItems.SNAKE_SPAWN_EGG.get()))
                     .title(Component.translatable("creativetab.spelunky_creatures_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SNAKE_SPAWN_EGG.get());
