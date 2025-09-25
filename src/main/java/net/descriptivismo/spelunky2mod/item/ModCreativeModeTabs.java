@@ -23,6 +23,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SKELETON_KEY.get());
                         output.accept(ModItems.GOLD_KEY.get());
                         output.accept(ModItems.UDJAT_EYE.get());
+                        output.accept(ModItems.BOMB.get());
                     })
                     .build());
 

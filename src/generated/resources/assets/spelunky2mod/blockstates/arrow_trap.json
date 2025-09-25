@@ -2,54 +2,48 @@
   "variants": {
     "facing=down,triggered=false": {
       "model": "spelunky2mod:block/arrow_trap",
-      "x": 180
+      "x": 90
     },
     "facing=down,triggered=true": {
       "model": "spelunky2mod:block/arrow_trap",
-      "x": 180
+      "x": 90
     },
     "facing=east,triggered=false": {
       "model": "spelunky2mod:block/arrow_trap",
-      "x": 90,
       "y": 90
     },
     "facing=east,triggered=true": {
       "model": "spelunky2mod:block/arrow_trap",
-      "x": 90,
       "y": 90
     },
     "facing=north,triggered=false": {
-      "model": "spelunky2mod:block/arrow_trap",
-      "x": 90
+      "model": "spelunky2mod:block/arrow_trap"
     },
     "facing=north,triggered=true": {
-      "model": "spelunky2mod:block/arrow_trap",
-      "x": 90
+      "model": "spelunky2mod:block/arrow_trap"
     },
     "facing=south,triggered=false": {
       "model": "spelunky2mod:block/arrow_trap",
-      "x": 90,
       "y": 180
     },
     "facing=south,triggered=true": {
       "model": "spelunky2mod:block/arrow_trap",
-      "x": 90,
       "y": 180
     },
     "facing=up,triggered=false": {
-      "model": "spelunky2mod:block/arrow_trap"
+      "model": "spelunky2mod:block/arrow_trap",
+      "x": 270
     },
     "facing=up,triggered=true": {
-      "model": "spelunky2mod:block/arrow_trap"
+      "model": "spelunky2mod:block/arrow_trap",
+      "x": 270
     },
     "facing=west,triggered=false": {
       "model": "spelunky2mod:block/arrow_trap",
-      "x": 90,
       "y": 270
     },
     "facing=west,triggered=true": {
       "model": "spelunky2mod:block/arrow_trap",
-      "x": 90,
       "y": 270
     }
   }

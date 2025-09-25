@@ -62,6 +62,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         itemModels().getBuilder(key.getPath()).parent(model);
     }
 
+    public void directionalBlock(Block block, Function<BlockState, ModelFile> modelFunc, int angleOffset) {
+        getVariantBuilder(block)
+                .forAllStates(state -> {
+                    Direction dir = state.getValue(BlockStateProperties.FACING);
+                    return ConfiguredModel.builder()
+                            .modelFile(modelFunc.apply(state))
+                            .rotationX(dir == Direction.DOWN ? 90 : dir == Direction.UP ? 270 : 0)
+                            .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + angleOffset) % 360)
+                            .build();
+                });
+    }
+
     public void goldBarWithItem(Block block, ModelFile modelBar, ModelFile modelBars,
                                 ModelFile modelRed, ModelFile modelBlue, ModelFile modelGreen)
     {

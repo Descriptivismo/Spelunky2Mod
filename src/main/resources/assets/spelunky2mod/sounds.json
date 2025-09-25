@@ -90,5 +90,15 @@
     "sounds": [
       "spelunky2mod:pick_up_rock"
     ]
+  },
+  "toss": {
+    "subtitle": "sounds.spelunky2mod.toss",
+    "sounds": [
+      "spelunky2mod:toss_swoosh_01",
+      "spelunky2mod:toss_swoosh_02",
+      "spelunky2mod:toss_swoosh_03",
+      "spelunky2mod:toss_swoosh_04",
+      "spelunky2mod:toss_swoosh_05"
+    ]
   }
 }

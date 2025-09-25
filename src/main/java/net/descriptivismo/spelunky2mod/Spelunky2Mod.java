@@ -10,6 +10,7 @@ import net.descriptivismo.spelunky2mod.item.ModCreativeModeTabs;
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -90,6 +91,8 @@ public class Spelunky2Mod
         {
             EntityRenderers.register(ModEntities.SNAKE.get(), SnakeRenderer::new);
             EntityRenderers.register(ModEntities.BOMB.get(), BombRenderer::new);
+
+            EntityRenderers.register(ModEntities.BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
 }

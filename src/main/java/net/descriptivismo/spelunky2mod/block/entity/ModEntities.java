@@ -2,6 +2,7 @@ package net.descriptivismo.spelunky2mod.block.entity;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.entity.custom.BombEntity;
+import net.descriptivismo.spelunky2mod.block.entity.custom.BombProjectileEntity;
 import net.descriptivismo.spelunky2mod.block.entity.custom.SnakeEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -23,6 +24,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BombEntity>> BOMB =
             ENTITY_TYPES.register("bomb", () -> EntityType.Builder.of(BombEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("bomb"));
+
+    public static final RegistryObject<EntityType<BombProjectileEntity>> BOMB_PROJECTILE =
+            ENTITY_TYPES.register("bomb_projectile", () -> EntityType.Builder.<BombProjectileEntity>of(BombProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).build("bomb_projectile"));
 
     public static void register(IEventBus eventBus)
     {

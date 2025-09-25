@@ -38,6 +38,7 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> NO_SOUND = registerSoundEvents("no_sound");
 
     public static final RegistryObject<SoundEvent> PICK_UP = registerSoundEvents("pick_up");
+    public static final RegistryObject<SoundEvent> TOSS = registerSoundEvents("toss");
 
     public static final ForgeSoundType BONE_BLOCK_SOUNDS = new ForgeSoundType(1f, 1f,
             ModSounds.BONE_BLOCK_BREAK, ModSounds.BONE_BLOCK_STEP, ModSounds.BONE_BLOCK_PLACE,

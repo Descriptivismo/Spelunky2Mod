@@ -2,6 +2,7 @@
   "item.spelunky2mod.gold_key": "Gold Key",
   "item.spelunky2mod.skeleton_key": "Skeleton Key",
   "item.spelunky2mod.udjat_eye": "Udjat Eye",
+  "item.spelunky2mod.bomb": "Bomb",
   "item.spelunky2mod.snake_spawn_egg": "Snake Spawn Egg",
   "item.minecraft.iron_pickaxe": "Mattock",
 
@@ -15,6 +16,7 @@
   "block.spelunky2mod.gold_bar": "Treasure",
 
   "entity.spelunky2mod.snake": "Snake",
+  "entity.spelunky2mod.bomb": "Bomb",
 
   "creativetab.spelunky_items_tab": "Spelunky Items",
   "creativetab.spelunky_blocks_tab": "Spelunky Blocks",
@@ -27,5 +29,6 @@
   "sounds.spelunky2mod.snake_die": "Snake hurts",
   "sounds.spelunky2mod.snake_attack": "Snake bites",
   "sounds.spelunky2mod.gold_collect": "Gold collected",
-  "sounds.spelunky2mod.pick_up": "Something grabbed"
+  "sounds.spelunky2mod.pick_up": "Something grabbed",
+  "sounds.spelunky2mod.toss": "Something tossed"
 }

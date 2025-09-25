@@ -2,6 +2,7 @@ package net.descriptivismo.spelunky2mod.item;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
+import net.descriptivismo.spelunky2mod.item.custom.BombItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,9 @@ public class ModItems {
     public static final RegistryObject<Item> SNAKE_SPAWN_EGG = ITEMS.register("snake_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SNAKE, 0x9dc157, 0xf2f282,
                     new Item.Properties()));
+
+    public static final RegistryObject<Item> BOMB = ITEMS.register("bomb",
+            () -> new BombItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {
