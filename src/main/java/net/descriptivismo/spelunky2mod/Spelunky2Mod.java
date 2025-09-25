@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.descriptivismo.spelunky2mod.block.ModBlocks;
 import net.descriptivismo.spelunky2mod.block.entity.ModBlockEntities;
 import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
+import net.descriptivismo.spelunky2mod.block.entity.client.BombRenderer;
 import net.descriptivismo.spelunky2mod.block.entity.client.SnakeRenderer;
 import net.descriptivismo.spelunky2mod.item.ModCreativeModeTabs;
 import net.descriptivismo.spelunky2mod.item.ModItems;
@@ -88,6 +89,7 @@ public class Spelunky2Mod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.SNAKE.get(), SnakeRenderer::new);
+            EntityRenderers.register(ModEntities.BOMB.get(), BombRenderer::new);
         }
     }
 }

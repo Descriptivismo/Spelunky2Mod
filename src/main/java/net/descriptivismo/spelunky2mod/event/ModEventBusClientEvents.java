@@ -2,6 +2,7 @@ package net.descriptivismo.spelunky2mod.event;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.entity.ModBlockEntities;
+import net.descriptivismo.spelunky2mod.block.entity.client.BombModel;
 import net.descriptivismo.spelunky2mod.block.entity.client.ModModelLayers;
 import net.descriptivismo.spelunky2mod.block.entity.client.SnakeModel;
 import net.descriptivismo.spelunky2mod.block.entity.renderer.ItemPickupBlockEntityRenderer;
@@ -23,5 +24,6 @@ public class ModEventBusClientEvents
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event)
     {
         event.registerLayerDefinition(ModModelLayers.SNAKE_LAYER, SnakeModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.BOMB_LAYER, BombModel::createBodyLayer);
     }
 }

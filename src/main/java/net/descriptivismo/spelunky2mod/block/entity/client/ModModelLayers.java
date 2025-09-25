@@ -12,4 +12,9 @@ public class ModModelLayers {
             "main"
     );
 
+    public static final ModelLayerLocation BOMB_LAYER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(Spelunky2Mod.MODID, "bomb_layer"),
+            "main"
+    );
+
 }
