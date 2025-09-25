@@ -2,13 +2,19 @@ package net.descriptivismo.spelunky2mod.block.entity.custom;
 
 import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
 import net.descriptivismo.spelunky2mod.item.ModItems;
+import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.List;
 
 public class BombProjectileEntity extends ThrowableItemProjectile {
 
@@ -41,8 +47,19 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
         {
             this.level().broadcastEntityEvent(this, ((byte) 3));
 
+
             BombEntity bomb = new BombEntity(ModEntities.BOMB.get(), this.level());
-            bomb.setPos(pResult.getLocation());
+
+            Vec3 pos = pResult.getLocation();
+            Direction dir = pResult.getDirection();
+            if (dir.getAxis().isHorizontal())
+            {
+                pos = pos.add(dir.getStepX() / 4d, 0.0d, dir.getStepZ() / 4d);
+            }
+
+
+            bomb.setPos(pos);
+
 
             this.level().addFreshEntity(bomb);
 

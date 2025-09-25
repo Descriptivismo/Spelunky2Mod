@@ -11,6 +11,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
@@ -38,7 +39,20 @@ public class BombEntity extends Entity {
         {
             setUpAnimationStates();
         }
+
+        if (!this.isNoGravity()) {
+            this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.04D, 0.0D));
+        }
+
+        this.move(MoverType.SELF, this.getDeltaMovement());
+
+//        if (isInWall())
+//            moveTowardsClosestSpace(position().x, position().y, position().z);
+//
+//        this.setDeltaMovement(this.getDeltaMovement().multiply(0.9f, 1.0f, 0.9f));
     }
+
+
 
     @Override
     protected void readAdditionalSaveData(CompoundTag pCompound) {
