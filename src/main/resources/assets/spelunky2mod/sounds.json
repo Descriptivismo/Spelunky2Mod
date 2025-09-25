@@ -79,5 +79,16 @@
       "spelunky2mod:gold01",
       "spelunky2mod:gold02"
     ]
+  },
+  "no_sound": {
+    "sounds": [
+      "spelunky2mod:no_sound"
+    ]
+  },
+  "pick_up": {
+    "subtitle": "sounds.spelunky2mod.pick_up",
+    "sounds": [
+      "spelunky2mod:pick_up_rock"
+    ]
   }
 }

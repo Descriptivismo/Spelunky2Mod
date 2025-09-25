@@ -2,6 +2,7 @@ package net.descriptivismo.spelunky2mod.datagen;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.ModBlocks;
+import net.descriptivismo.spelunky2mod.block.custom.TreasureBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -30,8 +31,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         cubeAllWithItem(ModBlocks.BONE_BLOCK);
         cubeDirectionalWithItem(ModBlocks.ARROW_TRAP);
         cubeAllWithItem(ModBlocks.ITEM_PICKUP);
-        simpleBlockWithItem(ModBlocks.GOLD_BAR.get(),
-                new ModelFile.UncheckedModelFile(modLoc("block/gold_bar")));
+        goldBarWithItem(ModBlocks.GOLD_BAR.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gold_bar_singular")),
+                new ModelFile.UncheckedModelFile(modLoc("block/gold_bar")),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_red")),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_blue")),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_green"))
+        );
     }
 
     private ResourceLocation extend(ResourceLocation rl, String suffix) {
@@ -56,16 +62,42 @@ public class ModBlockStateProvider extends BlockStateProvider {
         itemModels().getBuilder(key.getPath()).parent(model);
     }
 
-    public void directionalBlock(Block block, Function<BlockState, ModelFile> modelFunc, int angleOffset) {
+    public void goldBarWithItem(Block block, ModelFile modelBar, ModelFile modelBars,
+                                ModelFile modelRed, ModelFile modelBlue, ModelFile modelGreen)
+    {
         getVariantBuilder(block)
                 .forAllStates(state -> {
-                    Direction dir = state.getValue(BlockStateProperties.FACING);
+                    int rot = state.getValue(BlockStateProperties.ROTATION_16) / 4;
+                    TreasureBlock.TreasureType type = state.getValue(TreasureBlock.TREASURE_TYPE);
+
+                    ModelFile model = null;
+                    switch (type)
+                    {
+                        case BAR:
+                            model = modelBar;
+                            break;
+                        case BARS:
+                            model = modelBars;
+                            break;
+                        case RED:
+                            model = modelRed;
+                            break;
+                        case BLUE:
+                            model = modelBlue;
+                            break;
+                        case GREEN:
+                            model = modelGreen;
+                            break;
+                    }
+
                     return ConfiguredModel.builder()
-                            .modelFile(modelFunc.apply(state))
-                            .rotationX(dir == Direction.DOWN ? 90 : dir == Direction.UP ? 270 : 0)
-                            .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + angleOffset) % 360)
+                            .modelFile(model)
+                            .rotationY((int)(rot * 360.0d / 4.0d))
                             .build();
                 });
+
+        ResourceLocation key = ForgeRegistries.BLOCKS.getKey(block);
+        itemModels().getBuilder(key.getPath()).parent(modelBars);
     }
 
     private void cubeAllWithItem(RegistryObject<Block> blockRegistryObject)

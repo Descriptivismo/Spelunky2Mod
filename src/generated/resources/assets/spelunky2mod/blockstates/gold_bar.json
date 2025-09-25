@@ -1,0 +1,304 @@
+{
+  "variants": {
+    "rotation=0,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular"
+    },
+    "rotation=0,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar"
+    },
+    "rotation=0,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue"
+    },
+    "rotation=0,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green"
+    },
+    "rotation=0,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red"
+    },
+    "rotation=1,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular"
+    },
+    "rotation=1,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar"
+    },
+    "rotation=1,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue"
+    },
+    "rotation=1,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green"
+    },
+    "rotation=1,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red"
+    },
+    "rotation=10,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 180
+    },
+    "rotation=10,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 180
+    },
+    "rotation=10,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 180
+    },
+    "rotation=10,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 180
+    },
+    "rotation=10,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 180
+    },
+    "rotation=11,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 180
+    },
+    "rotation=11,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 180
+    },
+    "rotation=11,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 180
+    },
+    "rotation=11,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 180
+    },
+    "rotation=11,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 180
+    },
+    "rotation=12,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 270
+    },
+    "rotation=12,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 270
+    },
+    "rotation=12,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 270
+    },
+    "rotation=12,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 270
+    },
+    "rotation=12,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 270
+    },
+    "rotation=13,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 270
+    },
+    "rotation=13,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 270
+    },
+    "rotation=13,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 270
+    },
+    "rotation=13,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 270
+    },
+    "rotation=13,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 270
+    },
+    "rotation=14,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 270
+    },
+    "rotation=14,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 270
+    },
+    "rotation=14,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 270
+    },
+    "rotation=14,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 270
+    },
+    "rotation=14,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 270
+    },
+    "rotation=15,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 270
+    },
+    "rotation=15,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 270
+    },
+    "rotation=15,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 270
+    },
+    "rotation=15,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 270
+    },
+    "rotation=15,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 270
+    },
+    "rotation=2,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular"
+    },
+    "rotation=2,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar"
+    },
+    "rotation=2,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue"
+    },
+    "rotation=2,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green"
+    },
+    "rotation=2,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red"
+    },
+    "rotation=3,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular"
+    },
+    "rotation=3,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar"
+    },
+    "rotation=3,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue"
+    },
+    "rotation=3,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green"
+    },
+    "rotation=3,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red"
+    },
+    "rotation=4,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 90
+    },
+    "rotation=4,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 90
+    },
+    "rotation=4,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 90
+    },
+    "rotation=4,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 90
+    },
+    "rotation=4,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 90
+    },
+    "rotation=5,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 90
+    },
+    "rotation=5,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 90
+    },
+    "rotation=5,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 90
+    },
+    "rotation=5,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 90
+    },
+    "rotation=5,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 90
+    },
+    "rotation=6,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 90
+    },
+    "rotation=6,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 90
+    },
+    "rotation=6,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 90
+    },
+    "rotation=6,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 90
+    },
+    "rotation=6,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 90
+    },
+    "rotation=7,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 90
+    },
+    "rotation=7,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 90
+    },
+    "rotation=7,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 90
+    },
+    "rotation=7,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 90
+    },
+    "rotation=7,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 90
+    },
+    "rotation=8,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 180
+    },
+    "rotation=8,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 180
+    },
+    "rotation=8,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 180
+    },
+    "rotation=8,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 180
+    },
+    "rotation=8,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 180
+    },
+    "rotation=9,treasure_type=bar": {
+      "model": "spelunky2mod:block/gold_bar_singular",
+      "y": 180
+    },
+    "rotation=9,treasure_type=bars": {
+      "model": "spelunky2mod:block/gold_bar",
+      "y": 180
+    },
+    "rotation=9,treasure_type=blue": {
+      "model": "spelunky2mod:block/gem_blue",
+      "y": 180
+    },
+    "rotation=9,treasure_type=green": {
+      "model": "spelunky2mod:block/gem_green",
+      "y": 180
+    },
+    "rotation=9,treasure_type=red": {
+      "model": "spelunky2mod:block/gem_red",
+      "y": 180
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "spelunky2mod:gold_bar"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "spelunky2mod:blocks/gold_bar"
+}

@@ -1,13 +1,16 @@
 package net.descriptivismo.spelunky2mod.block.entity;
 
+import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
@@ -111,7 +114,10 @@ public class ItemPickupBlockEntity extends BlockEntity {
             if (playerItem.isEmpty())
             {
                 ItemStack item = itemHandler.extractItem(0, 1, false);
-                pPlayer.addItem(item);
+                Inventory inventory = pPlayer.getInventory();
+                inventory.add(inventory.selected, item);
+                pLevel.playSeededSound(null, pPos.getX(), pPos.getY(), pPos.getZ(),
+                        ModSounds.PICK_UP.get(), SoundSource.PLAYERS, 1f, 1f, 0);
                 pLevel.destroyBlock(pPos, false);
             }
         }

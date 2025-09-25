@@ -35,6 +35,10 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> GOLD_COLLECT = registerSoundEvents("gold_collect");
 
+    public static final RegistryObject<SoundEvent> NO_SOUND = registerSoundEvents("no_sound");
+
+    public static final RegistryObject<SoundEvent> PICK_UP = registerSoundEvents("pick_up");
+
     public static final ForgeSoundType BONE_BLOCK_SOUNDS = new ForgeSoundType(1f, 1f,
             ModSounds.BONE_BLOCK_BREAK, ModSounds.BONE_BLOCK_STEP, ModSounds.BONE_BLOCK_PLACE,
             ModSounds.BONE_BLOCK_HIT, ModSounds.BONE_BLOCK_FALL);
@@ -45,6 +49,11 @@ public class ModSounds {
             ForgeRegistries.SOUND_EVENTS.getDelegateOrThrow(SoundEvents.WOOD_HIT),
             ForgeRegistries.SOUND_EVENTS.getDelegateOrThrow(SoundEvents.WOOD_FALL)
             );
+
+    public static final ForgeSoundType NO_BREAK_SOUNDS = new ForgeSoundType (1f, 1f,
+            ModSounds.NO_SOUND, ModSounds.NO_SOUND,
+            ForgeRegistries.SOUND_EVENTS.getDelegateOrThrow(SoundEvents.STONE_PLACE),
+            ModSounds.NO_SOUND, ModSounds.NO_SOUND);
 
 
     private static RegistryObject<SoundEvent> registerSoundEvents(String name)

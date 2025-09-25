@@ -57,12 +57,14 @@ public class ModBlocks {
                     .noLootTable()
                     .noCollission()
                     .strength(-1.0f, 3600000.0f)
+                    .sound(ModSounds.NO_BREAK_SOUNDS)
             ));
     public static final RegistryObject<Block> GOLD_BAR = registerBlock("gold_bar",
             () -> new TreasureBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)
-                    .strength(-1.0f, 1.0f)
+                    .strength(3600000.0f, 1.0f)
                     .noOcclusion()
                     .noCollission()
+                    .sound(ModSounds.NO_BREAK_SOUNDS)
             ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
