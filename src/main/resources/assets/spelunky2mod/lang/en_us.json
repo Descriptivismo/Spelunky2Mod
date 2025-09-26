@@ -30,5 +30,6 @@
   "sounds.spelunky2mod.snake_attack": "Snake bites",
   "sounds.spelunky2mod.gold_collect": "Gold collected",
   "sounds.spelunky2mod.pick_up": "Something grabbed",
-  "sounds.spelunky2mod.toss": "Something tossed"
+  "sounds.spelunky2mod.toss": "Something tossed",
+  "sounds.spelunky2mod.fuse": "Bomb lit"
 }

@@ -100,5 +100,15 @@
       "spelunky2mod:toss_swoosh_04",
       "spelunky2mod:toss_swoosh_05"
     ]
+  },
+  "fuse": {
+    "subtitle": "sounds.spelunky2mod.fuse",
+    "sounds": [
+      "spelunky2mod:fuse_b1",
+      "spelunky2mod:fuse_b2",
+      "spelunky2mod:fuse_b3",
+      "spelunky2mod:fuse_b4",
+      "spelunky2mod:fuse_b5"
+    ]
   }
 }

@@ -46,7 +46,7 @@ public class BombModel<T extends Entity> extends HierarchicalModel<T> {
         //((BombEntity) entity).countdownAnimationState.start(0);
         this.animate(((BombEntity) entity).countdownAnimationState, ModAnimationDefinitions.BOMB_COUNTDOWN, ageInTicks, 1f);
         //System.out.println(((BombEntity) entity).countdownAnimationState.isStarted());
-        System.out.println(((BombEntity) entity).countdownAnimationState.getAccumulatedTime());
+        //System.out.println(((BombEntity) entity).countdownAnimationState.getAccumulatedTime());
 	}
 
 	@Override

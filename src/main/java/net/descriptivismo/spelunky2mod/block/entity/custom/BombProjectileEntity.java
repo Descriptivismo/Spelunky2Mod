@@ -2,7 +2,9 @@ package net.descriptivismo.spelunky2mod.block.entity.custom;
 
 import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
 import net.descriptivismo.spelunky2mod.item.ModItems;
+import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
@@ -57,12 +59,13 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
                 pos = pos.add(dir.getStepX() / 4d, 0.0d, dir.getStepZ() / 4d);
             }
 
-
             bomb.setPos(pos);
-
+            bomb.setDeltaMovement(0, this.getDeltaMovement().y, 0);
 
             this.level().addFreshEntity(bomb);
 
+            this.level().playSeededSound(null, pos.x, pos.y, pos.z, ModSounds.FUSE.get(), SoundSource.BLOCKS,
+                    1f, 1f, random.nextInt());
 
             kill();
         }

@@ -71,7 +71,7 @@ public class SnakeModel<T extends Entity> extends HierarchicalModel<T> {
         this.animate(((SnakeEntity) entity).walkAnimationState, ModAnimationDefinitions.SNAKE_WALK, ageInTicks, 1f);
         this.animate(((SnakeEntity) entity).attackAnimationState, ModAnimationDefinitions.SNAKE_ATTACK, ageInTicks, 1f);
 
-        System.out.println(((SnakeEntity) entity).walkAnimationState.getAccumulatedTime());
+        //System.out.println(((SnakeEntity) entity).walkAnimationState.getAccumulatedTime());
 	}
 
     private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks)
