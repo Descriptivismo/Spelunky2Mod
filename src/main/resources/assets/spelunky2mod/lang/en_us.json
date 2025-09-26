@@ -18,6 +18,7 @@
   "block.spelunky2mod.crate": "Crate",
   "block.spelunky2mod.item_pickup": "Item Pickup Slot",
   "block.spelunky2mod.gold_bar": "Treasure",
+  "block.spelunky2mod.rope_block": "Rope",
 
   "entity.spelunky2mod.snake": "Snake",
   "entity.spelunky2mod.bomb": "Bomb",
@@ -36,5 +37,7 @@
   "sounds.spelunky2mod.pick_up": "Something grabbed",
   "sounds.spelunky2mod.toss": "Something tossed",
   "sounds.spelunky2mod.fuse": "Bomb lit",
-  "sounds.spelunky2mod.resource_get": "Item collected"
+  "sounds.spelunky2mod.resource_get": "Item collected",
+  "sounds.spelunky2mod.rope_attach": "Rope attaches",
+  "sounds.spelunky2mod.rope_toss": "Rope tossed"
 }

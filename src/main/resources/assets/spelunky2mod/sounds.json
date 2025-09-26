@@ -116,5 +116,19 @@
     "sounds": [
       "spelunky2mod:item_get_sting"
     ]
+  },
+  "rope_attach": {
+    "subtitle": "sounds.spelunky2mod.rope_attach",
+    "sounds": [
+      "spelunky2mod:rope_attach"
+    ]
+  },
+  "rope_toss": {
+    "subtitle": "sounds.spelunky2mod.rope_toss",
+    "sounds": [
+      "spelunky2mod:rope_toss_01",
+      "spelunky2mod:rope_toss_02",
+      "spelunky2mod:rope_toss_03"
+    ]
   }
 }

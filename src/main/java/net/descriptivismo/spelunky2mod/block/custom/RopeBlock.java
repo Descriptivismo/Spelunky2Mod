@@ -1,8 +1,10 @@
 package net.descriptivismo.spelunky2mod.block.custom;
 
 import net.descriptivismo.spelunky2mod.block.ModBlocks;
+import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -57,6 +59,11 @@ public class RopeBlock extends Block {
     public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pMovedByPiston) {
         super.onPlace(pState, pLevel, pPos, pOldState, pMovedByPiston);
 
+        if (pState.getValue(RANK) >= 7)
+        {
+            pLevel.playSound(null, pPos, ModSounds.ROPE_ATTACH.get(), SoundSource.BLOCKS);
+        }
+
         if (pState.getValue(RANK) < 7)
         {
             if (pState.getValue(PROPAGATE_UP))
@@ -81,6 +88,10 @@ public class RopeBlock extends Block {
             {
                 propagateDown(pState, pLevel, pPos, pState.getValue(RANK));
             }
+        }
+        else if (!pState.getValue(PROPAGATE_UP))
+        {
+            propagateDown(pState, pLevel, pPos, pState.getValue(RANK));
         }
     }
 
