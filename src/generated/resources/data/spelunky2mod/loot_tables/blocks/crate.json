@@ -49,14 +49,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 3.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "spelunky2mod:bomb",
+          "name": "spelunky2mod:bomb_bag",
           "weight": 3406
         },
         {
@@ -66,14 +59,7 @@
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 12.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "spelunky2mod:bomb",
+          "name": "spelunky2mod:bomb_box",
           "weight": 204
         },
         {

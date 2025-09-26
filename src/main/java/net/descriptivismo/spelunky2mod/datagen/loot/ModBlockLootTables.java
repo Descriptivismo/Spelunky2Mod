@@ -54,12 +54,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         return createSilkTouchOnlyTable(pBlock)
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f))
                         .when(HAS_NO_SILK_TOUCH)
-                        .add(LootItem.lootTableItem(ModItems.BOMB.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))).setWeight(3406))
-                        // replace with an actual bomb bag item, same with rope pile and bomb box
+                        .add(LootItem.lootTableItem(ModItems.BOMB_BAG.get()).setWeight(3406))
                         .add(LootItem.lootTableItem(Items.COMPASS).setWeight(398))
-                        .add(LootItem.lootTableItem(ModItems.BOMB.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))).setWeight(204))
+                        .add(LootItem.lootTableItem(ModItems.BOMB_BOX.get()).setWeight(204))
                         .add(LootItem.lootTableItem(Items.IRON_PICKAXE).setWeight(97))
                         .add(LootItem.lootTableItem(Items.CROSSBOW).setWeight(50))
                 );

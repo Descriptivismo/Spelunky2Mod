@@ -42,6 +42,8 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> FUSE = registerSoundEvents("fuse");
 
+    public static final RegistryObject<SoundEvent> RESOURCE_GET = registerSoundEvents("resource_get");
+
     public static final ForgeSoundType BONE_BLOCK_SOUNDS = new ForgeSoundType(1f, 1f,
             ModSounds.BONE_BLOCK_BREAK, ModSounds.BONE_BLOCK_STEP, ModSounds.BONE_BLOCK_PLACE,
             ModSounds.BONE_BLOCK_HIT, ModSounds.BONE_BLOCK_FALL);

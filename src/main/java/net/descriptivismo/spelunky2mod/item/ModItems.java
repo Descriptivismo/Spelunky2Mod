@@ -3,6 +3,7 @@ package net.descriptivismo.spelunky2mod.item;
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
 import net.descriptivismo.spelunky2mod.item.custom.BombItem;
+import net.descriptivismo.spelunky2mod.item.custom.ResourceItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,6 +30,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> BOMB = ITEMS.register("bomb",
             () -> new BombItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> BOMB_BAG = ITEMS.register("bomb_bag",
+            () -> new ResourceItem(new Item.Properties()));
+    public static final RegistryObject<Item> BOMB_BOX = ITEMS.register("bomb_box",
+            () -> new ResourceItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {

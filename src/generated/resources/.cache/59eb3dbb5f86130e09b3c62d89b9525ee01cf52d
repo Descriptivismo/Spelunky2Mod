@@ -1,7 +1,7 @@
-// 1.20.1	2025-09-26T00:34:19.2193815	Loot Tables
+// 1.20.1	2025-09-26T14:28:25.7877115	Loot Tables
 91048c627238e29f7353116cf20fba6fcfb2c217 data/spelunky2mod/loot_tables/blocks/arrow_trap.json
 2bb014e102e13bccc11c7399b360b729b1bea1bd data/spelunky2mod/loot_tables/blocks/bone_block.json
-ef7e6bca955d5c7ea396d23fdde0424854ccd4eb data/spelunky2mod/loot_tables/blocks/crate.json
+9fb9a6c54eca6ef64290ca02ede309bcf61f598e data/spelunky2mod/loot_tables/blocks/crate.json
 38ce5c841b219871e55cf1e8550e2c17497481ab data/spelunky2mod/loot_tables/blocks/dwelling_rock.json
 01f38ace2fec2dd98a1b24d3ad13c5afe6a66754 data/spelunky2mod/loot_tables/blocks/dwelling_wood.json
 97e78fdc3454593477674fe590b3b14dfab1b086 data/spelunky2mod/loot_tables/blocks/gold_bar.json

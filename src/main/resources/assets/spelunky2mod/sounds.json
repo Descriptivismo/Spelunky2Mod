@@ -110,5 +110,11 @@
       "spelunky2mod:fuse_b4",
       "spelunky2mod:fuse_b5"
     ]
+  },
+  "resource_get": {
+    "subtitle": "sounds.spelunky2mod.resource_get",
+    "sounds": [
+      "spelunky2mod:item_get_sting"
+    ]
   }
 }

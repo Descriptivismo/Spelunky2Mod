@@ -3,6 +3,8 @@
   "item.spelunky2mod.skeleton_key": "Skeleton Key",
   "item.spelunky2mod.udjat_eye": "Udjat Eye",
   "item.spelunky2mod.bomb": "Bomb",
+  "item.spelunky2mod.bomb_bag": "Bomb Bag",
+  "item.spelunky2mod.bomb_box": "Bomb Box",
   "item.spelunky2mod.snake_spawn_egg": "Snake Spawn Egg",
   "item.minecraft.iron_pickaxe": "Mattock",
 
@@ -31,5 +33,6 @@
   "sounds.spelunky2mod.gold_collect": "Gold collected",
   "sounds.spelunky2mod.pick_up": "Something grabbed",
   "sounds.spelunky2mod.toss": "Something tossed",
-  "sounds.spelunky2mod.fuse": "Bomb lit"
+  "sounds.spelunky2mod.fuse": "Bomb lit",
+  "sounds.spelunky2mod.resource_get": "Item collected"
 }
