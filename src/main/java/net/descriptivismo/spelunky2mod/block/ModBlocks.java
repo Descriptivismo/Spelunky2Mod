@@ -67,6 +67,14 @@ public class ModBlocks {
                     .sound(ModSounds.NO_BREAK_SOUNDS)
             ));
 
+    public static final RegistryObject<Block> ROPE_BLOCK = registerBlock("rope_block",
+            () -> new RopeBlock(BlockBehaviour.Properties.copy(Blocks.LADDER)
+                    .strength(1.0f, 1.0f)
+                    .noCollission()
+                    .noLootTable()
+                    .sound(SoundType.WOOL)
+            ));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

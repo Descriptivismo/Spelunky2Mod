@@ -24,5 +24,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.ARROW_TRAP.get());
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.DWELLING_WOOD.get());
+        this.tag(BlockTags.CLIMBABLE)
+                .add(ModBlocks.ROPE_BLOCK.get());
     }
 }

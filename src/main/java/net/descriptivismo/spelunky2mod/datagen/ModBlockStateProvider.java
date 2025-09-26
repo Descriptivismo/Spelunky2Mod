@@ -38,6 +38,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_blue")),
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_green"))
         );
+        ropeBlockWithItem(ModBlocks.ROPE_BLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/rope")),
+                new ModelFile.UncheckedModelFile(modLoc("block/rope_end")));
     }
 
     private ResourceLocation extend(ResourceLocation rl, String suffix) {
@@ -72,6 +75,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
                             .rotationY(dir.getAxis().isVertical() ? 0 : (((int) dir.toYRot()) + angleOffset) % 360)
                             .build();
                 });
+    }
+
+    public void ropeBlockWithItem(Block block, ModelFile ropeModel, ModelFile ropeEndModel)
+    {
+        getVariantBuilder(block)
+                .forAllStates(state -> ConfiguredModel.builder()
+                        .modelFile(state.getValue(BlockStateProperties.AGE_7) < 7 ?
+                                ropeModel : ropeEndModel)
+                        .build());
+        ResourceLocation key = ForgeRegistries.BLOCKS.getKey(block);
+        itemModels().getBuilder(key.getPath()).parent(ropeEndModel);
     }
 
     public void goldBarWithItem(Block block, ModelFile modelBar, ModelFile modelBars,

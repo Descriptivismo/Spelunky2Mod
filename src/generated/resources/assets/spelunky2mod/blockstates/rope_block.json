@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "age=0,up=false": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=0,up=true": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=1,up=false": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=1,up=true": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=2,up=false": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=2,up=true": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=3,up=false": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=3,up=true": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=4,up=false": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=4,up=true": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=5,up=false": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=5,up=true": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=6,up=false": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=6,up=true": {
+      "model": "spelunky2mod:block/rope"
+    },
+    "age=7,up=false": {
+      "model": "spelunky2mod:block/rope_end"
+    },
+    "age=7,up=true": {
+      "model": "spelunky2mod:block/rope_end"
+    }
+  }
+}
