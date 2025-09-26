@@ -5,13 +5,17 @@ package net.descriptivismo.spelunky2mod.block.entity.client;// Made with Blockbe
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.descriptivismo.spelunky2mod.block.entity.animations.ModAnimationDefinitions;
+import net.descriptivismo.spelunky2mod.block.entity.custom.BombEntity;
+import net.descriptivismo.spelunky2mod.block.entity.custom.SnakeEntity;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.Entity;
 
-public class BombModel<T extends Entity> extends EntityModel<T> {
+public class BombModel<T extends Entity> extends HierarchicalModel<T> {
 
 	private final ModelPart root;
 	private final ModelPart bomb;
@@ -36,7 +40,13 @@ public class BombModel<T extends Entity> extends EntityModel<T> {
 
 	@Override
 	public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        this.root().getAllParts().forEach(ModelPart::resetPose);
 
+        //this.animateWalk(ModAnimationDefinitions.BOMB_COUNTDOWN, 1.0f, 1.0f, 1.0f, 1.0f);
+        //((BombEntity) entity).countdownAnimationState.start(0);
+        this.animate(((BombEntity) entity).countdownAnimationState, ModAnimationDefinitions.BOMB_COUNTDOWN, ageInTicks, 1f);
+        //System.out.println(((BombEntity) entity).countdownAnimationState.isStarted());
+        System.out.println(((BombEntity) entity).countdownAnimationState.getAccumulatedTime());
 	}
 
 	@Override

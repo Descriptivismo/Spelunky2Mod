@@ -20,10 +20,10 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.GOLD_KEY.get()))
                     .title(Component.translatable("creativetab.spelunky_items_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.BOMB.get());
                         output.accept(ModItems.SKELETON_KEY.get());
                         output.accept(ModItems.GOLD_KEY.get());
                         output.accept(ModItems.UDJAT_EYE.get());
-                        output.accept(ModItems.BOMB.get());
                     })
                     .build());
 

@@ -6,6 +6,7 @@ package net.descriptivismo.spelunky2mod.block.entity.client;// Made with Blockbe
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.descriptivismo.spelunky2mod.block.entity.animations.ModAnimationDefinitions;
+import net.descriptivismo.spelunky2mod.block.entity.custom.BombEntity;
 import net.descriptivismo.spelunky2mod.block.entity.custom.SnakeEntity;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
@@ -70,6 +71,7 @@ public class SnakeModel<T extends Entity> extends HierarchicalModel<T> {
         this.animate(((SnakeEntity) entity).walkAnimationState, ModAnimationDefinitions.SNAKE_WALK, ageInTicks, 1f);
         this.animate(((SnakeEntity) entity).attackAnimationState, ModAnimationDefinitions.SNAKE_ATTACK, ageInTicks, 1f);
 
+        System.out.println(((SnakeEntity) entity).walkAnimationState.getAccumulatedTime());
 	}
 
     private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks)

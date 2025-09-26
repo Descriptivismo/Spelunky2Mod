@@ -22,6 +22,13 @@ import net.minecraft.world.phys.Vec3;
 
 public class BombEntity extends Entity {
 
+    public final AnimationState countdownAnimationState = new AnimationState();
+
+    private static final EntityDataAccessor<Integer> COUNTDOWN =
+            SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.INT);
+
+    private static final int countdownLength = 50;
+
     public BombEntity(EntityType pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -29,6 +36,15 @@ public class BombEntity extends Entity {
     @Override
     protected void defineSynchedData() {
 
+        this.entityData.define(COUNTDOWN, countdownLength);
+
+    }
+
+    private void explode()
+    {
+        level().explode(this, position().x, position().y, position().z, 3.0f,
+                Level.ExplosionInteraction.TNT);
+        kill();
     }
 
     @Override
@@ -46,10 +62,13 @@ public class BombEntity extends Entity {
 
         this.move(MoverType.SELF, this.getDeltaMovement());
 
-//        if (isInWall())
-//            moveTowardsClosestSpace(position().x, position().y, position().z);
-//
-//        this.setDeltaMovement(this.getDeltaMovement().multiply(0.9f, 1.0f, 0.9f));
+        int currCountdown = this.entityData.get(COUNTDOWN);
+        if (currCountdown <= 0) {
+            explode();
+        }
+        else {
+            this.entityData.set(COUNTDOWN, currCountdown - 1);
+        }
     }
 
 
@@ -64,9 +83,12 @@ public class BombEntity extends Entity {
 
     }
 
-    private void setUpAnimationStates()
-    {
+    private void setUpAnimationStates() {
+        countdownAnimationState.startIfStopped(0);
 
+        //this.tickCount++;
+        //countdownAnimationState.updateTime(this.tickCount, 1);
+        //System.out.println(countdownAnimationState.getAccumulatedTime());
     }
 
 }

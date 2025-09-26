@@ -9,6 +9,7 @@ import net.descriptivismo.spelunky2mod.block.entity.custom.SnakeEntity;
 import net.minecraft.client.model.ShulkerBulletModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -36,7 +37,7 @@ public class BombRenderer extends EntityRenderer<BombEntity> {
         pPoseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
         pPoseStack.translate(0.0F, -3.0F, 0.0F);
         pPoseStack.scale(2F, 2F, 2F);
-        this.model.setupAnim(pEntity, 0.0F, 0.0F, 0.0F, 0, 0);
+        this.model.setupAnim(pEntity, 0.0F, 0.0F, pEntity.tickCount + pPartialTicks, 0, 0);
         VertexConsumer vertexconsumer = pBuffer.getBuffer(this.model.renderType(getTextureLocation(pEntity)));
         this.model.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         pPoseStack.popPose();
