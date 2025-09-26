@@ -55,6 +55,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f))
                         .when(HAS_NO_SILK_TOUCH)
                         .add(LootItem.lootTableItem(ModItems.BOMB_BAG.get()).setWeight(3406))
+                        .add(LootItem.lootTableItem(ModItems.ROPE_PILE.get()).setWeight(3406))
                         .add(LootItem.lootTableItem(Items.COMPASS).setWeight(398))
                         .add(LootItem.lootTableItem(ModItems.BOMB_BOX.get()).setWeight(204))
                         .add(LootItem.lootTableItem(Items.IRON_PICKAXE).setWeight(97))

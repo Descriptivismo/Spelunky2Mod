@@ -30,6 +30,8 @@ public class ResourceItem extends Item {
                 resourcesToGive = new ItemStack(ModItems.BOMB.get(), 3);
             else if (itemStack.is(ModItems.BOMB_BOX.get()))
                 resourcesToGive = new ItemStack(ModItems.BOMB.get(), 12);
+            else if (itemStack.is(ModItems.ROPE_PILE.get()))
+                resourcesToGive = new ItemStack(ModItems.ROPE.get(), 3);
             else
                 resourcesToGive = new ItemStack(Items.COAL, 1);
 

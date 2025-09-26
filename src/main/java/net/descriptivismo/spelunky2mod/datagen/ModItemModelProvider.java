@@ -24,6 +24,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BOMB);
         simpleItem(ModItems.BOMB_BAG);
         simpleItem(ModItems.BOMB_BOX);
+        simpleItem(ModItems.ROPE);
+        simpleItem(ModItems.ROPE_PILE);
 
         withExistingParent(ModItems.SNAKE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }

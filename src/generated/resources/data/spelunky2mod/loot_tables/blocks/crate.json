@@ -54,6 +54,11 @@
         },
         {
           "type": "minecraft:item",
+          "name": "spelunky2mod:rope_pile",
+          "weight": 3406
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:compass",
           "weight": 398
         },
