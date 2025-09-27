@@ -11,10 +11,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.entity.AnimationState;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
@@ -32,7 +29,7 @@ import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 
 import java.util.List;
 
-public class SnakeEntity extends Monster {
+public class SnakeEntity extends SquishableMonster {
 
     public SnakeEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -40,40 +37,70 @@ public class SnakeEntity extends Monster {
 
     private static final EntityDataAccessor<Boolean> ATTACKING =
             SynchedEntityData.defineId(SnakeEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> ATTACK_TIMEOUT =
+            SynchedEntityData.defineId(SnakeEntity.class, EntityDataSerializers.INT);
 
     private static final float attackRange = 1f;
 
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState walkAnimationState = new AnimationState();
     public final AnimationState attackAnimationState = new AnimationState();
-    private int idleAnimationTimeout = 0;
-    private int attackAnimationTimeout = 0;
-    private Vec3 prevPos;
 
     @Override
     public void tick() {
         super.tick();
 
-        if (this.level().isClientSide)
+        if (checkSquish() || this.getHealth() <= 0)
+            return;
+
+        //if (this.level().isClientSide)
         {
+            System.out.println(walkAnimationState.isStarted() + " " + attackAnimationState.isStarted());
+
             setUpAnimationStates();
+
+            List<Entity> entities = level().getEntities(this, getBoundingBox().inflate(0.1d));
+            for (Entity entity : entities)
+            {
+                if (entity instanceof Player)
+                {
+                    Player player = (Player)entity;
+                    boolean playerHurt = player.hurt(damageSources().mobAttack(this),
+                            (float)getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+                    if (playerHurt) {
+                        level().playSeededSound(null, position().x, position().y, position().z,
+                                ModSounds.SNAKE_ATTACK.get(), SoundSource.HOSTILE, 1f, 1f, 0);
+                        setAttacking(true);
+                    }
+                }
+            }
         }
+
+
     }
 
     private void setUpAnimationStates()
     {
-        if (!isAttacking())
-            this.walkAnimationState.startIfStopped(this.tickCount);
+        if (isAttacking()) {
+            System.out.println("kill me");
+            if (!attackAnimationState.isStarted())
+                entityData.set(ATTACK_TIMEOUT, 10);
+            this.attackAnimationState.startIfStopped(this.tickCount);
+            this.walkAnimationState.stop();
 
-        if (this.isAttacking() && attackAnimationTimeout <= 0)
+            if (entityData.get(ATTACK_TIMEOUT) <= 0) {
+                setAttacking(false);
+            } else {
+                entityData.set(ATTACK_TIMEOUT, entityData.get(ATTACK_TIMEOUT) - 1);
+            }
+        }
+        else
         {
-            setAttacking(false);
-        } else
-        {
-            --this.attackAnimationTimeout;
+            this.walkAnimationState.startIfStopped(this.tickCount);
+            this.attackAnimationState.stop();
         }
 
-
+        System.out.println(entityData.get(ATTACK_TIMEOUT));
     }
 
     @Override
@@ -85,16 +112,16 @@ public class SnakeEntity extends Monster {
 
             //if (!isAttacking())
             {
-                boolean playerHurt = pPlayer.hurt(damageSources().mobAttack(this),
-                        (float)getAttribute(Attributes.ATTACK_DAMAGE).getValue());
-                if (playerHurt) {
-                    level().playSeededSound(null, position().x, position().y, position().z,
-                            ModSounds.SNAKE_ATTACK.get(), SoundSource.HOSTILE, 1f, 1f, 0);
-
-                }
+//                boolean playerHurt = pPlayer.hurt(damageSources().mobAttack(this),
+//                        (float)getAttribute(Attributes.ATTACK_DAMAGE).getValue());
+//                if (playerHurt) {
+//                    level().playSeededSound(null, position().x, position().y, position().z,
+//                            ModSounds.SNAKE_ATTACK.get(), SoundSource.HOSTILE, 1f, 1f, 0);
+//                    setAttacking(true);
+//                }
             }
 
-            setAttacking(true);
+
         }
     }
 
@@ -112,12 +139,12 @@ public class SnakeEntity extends Monster {
 
     public void setAttacking(boolean attacking)
     {
-        if (attacking && !this.entityData.get(ATTACKING))
+        if (attacking)// && !this.entityData.get(ATTACKING))
         {
-            attackAnimationTimeout = 10;
+            entityData.set(ATTACK_TIMEOUT, 10);
             attackAnimationState.start(this.tickCount);
             walkAnimationState.stop();
-
+            System.out.println(attackAnimationState.isStarted() + " " + entityData.get(ATTACK_TIMEOUT));
         }
         this.entityData.set(ATTACKING, attacking);
 
@@ -133,6 +160,7 @@ public class SnakeEntity extends Monster {
         super.defineSynchedData();
 
         this.entityData.define(ATTACKING, false);
+        this.entityData.define(ATTACK_TIMEOUT, 0);
     }
 
     @Override
@@ -145,7 +173,7 @@ public class SnakeEntity extends Monster {
     public static AttributeSupplier.Builder createAttributes()
     {
         return Monster.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 4)
+                .add(Attributes.MAX_HEALTH, 2)
                 .add(Attributes.ATTACK_DAMAGE, 2)
                 .add(Attributes.MOVEMENT_SPEED, 0.125d)
                 .add(Attributes.FOLLOW_RANGE, 8)
