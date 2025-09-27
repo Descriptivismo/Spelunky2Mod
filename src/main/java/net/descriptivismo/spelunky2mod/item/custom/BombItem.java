@@ -1,6 +1,7 @@
 package net.descriptivismo.spelunky2mod.item.custom;
 
 import net.descriptivismo.spelunky2mod.block.entity.custom.BombProjectileEntity;
+import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -28,6 +29,12 @@ public class BombItem extends Item {
             BombProjectileEntity bomb = new BombProjectileEntity(pLevel, pPlayer);
             bomb.setItem(itemStack);
             bomb.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.0F, 1.0F);
+
+            if (pPlayer.getInventory().contains(new ItemStack(ModItems.PASTE.get())))
+            {
+                bomb.setPasteBomb();
+            }
+
             pLevel.addFreshEntity(bomb);
         }
 

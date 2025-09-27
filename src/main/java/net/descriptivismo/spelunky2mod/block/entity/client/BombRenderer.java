@@ -14,6 +14,9 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.projectile.ShulkerBullet;
@@ -29,7 +32,10 @@ public class BombRenderer extends EntityRenderer<BombEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(BombEntity pEntity) {
-        return ResourceLocation.fromNamespaceAndPath(Spelunky2Mod.MODID, "textures/entity/bomb_3d.png");
+
+        return pEntity.isPasteBomb() ?
+                ResourceLocation.fromNamespaceAndPath(Spelunky2Mod.MODID, "textures/entity/bomb_paste.png") :
+                ResourceLocation.fromNamespaceAndPath(Spelunky2Mod.MODID, "textures/entity/bomb_3d.png");
     }
 
     public void render(BombEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {

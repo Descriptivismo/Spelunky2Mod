@@ -29,11 +29,15 @@ public class RopeItem extends Item {
         Player pPlayer = pContext.getPlayer();
         ItemStack itemStack = pContext.getItemInHand();
 
+        Direction dir = pContext.getClickedFace();
+        BlockPos pos = pContext.getClickedPos().offset(dir.getStepX(), dir.getStepY(), dir.getStepZ());
+        if (!pLevel.getBlockState(pos).isAir())
+            return InteractionResult.FAIL;
+
         pLevel.playSeededSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), ModSounds.ROPE_TOSS.get(),
                 SoundSource.NEUTRAL, 1F, 1F, pLevel.random.nextLong());
         if (!pLevel.isClientSide) {
-            Direction dir = pContext.getClickedFace();
-            BlockPos pos = pContext.getClickedPos().offset(dir.getStepX(), dir.getStepY(), dir.getStepZ());
+
             if (pContext.isSecondaryUseActive())
             {
                 pLevel.setBlock(pos, ModBlocks.ROPE_BLOCK.get().getStateDefinition().any()

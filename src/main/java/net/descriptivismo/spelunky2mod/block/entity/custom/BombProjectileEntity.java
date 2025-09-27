@@ -4,12 +4,17 @@ import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
@@ -19,6 +24,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.List;
 
 public class BombProjectileEntity extends ThrowableItemProjectile {
+
+    private static final EntityDataAccessor<Boolean> PASTE =
+            SynchedEntityData.defineId(BombProjectileEntity.class, EntityDataSerializers.BOOLEAN);
 
     public BombProjectileEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -33,6 +41,16 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
     }
 
     @Override
+    protected void defineSynchedData() {
+
+        super.defineSynchedData();
+
+
+        this.entityData.define(PASTE, false);
+
+    }
+
+    @Override
     protected Item getDefaultItem() {
         return ModItems.BOMB.get();
     }
@@ -40,6 +58,11 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
     @Override
     protected float getGravity() {
         return 0.06f;
+    }
+
+    public void setPasteBomb()
+    {
+        this.entityData.set(PASTE, true);
     }
 
     @Override
@@ -60,7 +83,10 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
             }
 
             bomb.setPos(pos);
-            bomb.setDeltaMovement(0, this.getDeltaMovement().y, 0);
+            if (entityData.get(PASTE))
+                bomb.setPasteBomb();
+            else
+                bomb.setDeltaMovement(0, this.getDeltaMovement().y, 0);
 
             this.level().addFreshEntity(bomb);
 

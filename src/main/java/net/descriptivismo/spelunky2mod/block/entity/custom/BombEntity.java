@@ -26,6 +26,8 @@ public class BombEntity extends Entity {
 
     private static final EntityDataAccessor<Integer> COUNTDOWN =
             SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> PASTE =
+            SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.BOOLEAN);
 
     private static final int countdownLength = 50;
 
@@ -37,7 +39,18 @@ public class BombEntity extends Entity {
     protected void defineSynchedData() {
 
         this.entityData.define(COUNTDOWN, countdownLength);
+        this.entityData.define(PASTE, false);
 
+    }
+
+    public boolean isPasteBomb()
+    {
+        return this.entityData.get(PASTE);
+    }
+
+    public void setPasteBomb()
+    {
+        this.entityData.set(PASTE, true);
     }
 
     private void explode()
@@ -56,7 +69,7 @@ public class BombEntity extends Entity {
             setUpAnimationStates();
         }
 
-        if (!this.isNoGravity()) {
+        if (!entityData.get(PASTE) && !this.isNoGravity()) {
             this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.04D, 0.0D));
         }
 

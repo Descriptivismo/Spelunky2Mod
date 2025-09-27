@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BOMB_BAG.get());
                         output.accept(ModItems.ROPE_PILE.get());
                         output.accept(ModItems.BOMB_BOX.get());
+                        output.accept(ModItems.PASTE.get());
                         output.accept(ModItems.SKELETON_KEY.get());
                         output.accept(ModItems.GOLD_KEY.get());
                         output.accept(ModItems.UDJAT_EYE.get());

@@ -41,6 +41,9 @@ public class ModItems {
     public static final RegistryObject<Item> ROPE_PILE = ITEMS.register("rope_pile",
             () -> new ResourceItem(new Item.Properties()));
 
+    public static final RegistryObject<Item> PASTE = ITEMS.register("paste",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);
