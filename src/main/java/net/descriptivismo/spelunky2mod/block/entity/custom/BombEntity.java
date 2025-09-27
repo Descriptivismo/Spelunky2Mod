@@ -1,24 +1,24 @@
 package net.descriptivismo.spelunky2mod.block.entity.custom;
 
-import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MoverType;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.level.ExplosionEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fluids.FluidType;
+
+import java.util.List;
 
 public class BombEntity extends Entity {
 
@@ -27,6 +27,10 @@ public class BombEntity extends Entity {
     private static final EntityDataAccessor<Integer> COUNTDOWN =
             SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> PASTE =
+            SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> EXPLODING =
+            SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> EXPLODING_NEXT_TICK =
             SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.BOOLEAN);
 
     private static final int countdownLength = 50;
@@ -40,6 +44,8 @@ public class BombEntity extends Entity {
 
         this.entityData.define(COUNTDOWN, countdownLength);
         this.entityData.define(PASTE, false);
+        this.entityData.define(EXPLODING, false);
+        this.entityData.define(EXPLODING_NEXT_TICK, false);
 
     }
 
@@ -51,6 +57,17 @@ public class BombEntity extends Entity {
     public void setPasteBomb()
     {
         this.entityData.set(PASTE, true);
+    }
+
+    @Override
+    public boolean ignoreExplosion() {
+
+        if (!this.entityData.get(EXPLODING) && !this.entityData.get(EXPLODING_NEXT_TICK))
+        {
+            this.entityData.set(EXPLODING_NEXT_TICK, true);
+        }
+
+        return false;
     }
 
     private void explode()
@@ -77,14 +94,29 @@ public class BombEntity extends Entity {
 
         int currCountdown = this.entityData.get(COUNTDOWN);
         if (currCountdown <= 0) {
-            explode();
+            //explode();
+            this.entityData.set(EXPLODING, true);
         }
         else {
             this.entityData.set(COUNTDOWN, currCountdown - 1);
         }
+
+        if (isOnFire())
+            this.entityData.set(EXPLODING, true);
+
+        if (!level().isClientSide && this.entityData.get(EXPLODING))
+            explode();
+
+        if (this.entityData.get(EXPLODING_NEXT_TICK)) {
+            this.entityData.set(EXPLODING, true);
+            this.entityData.set(EXPLODING_NEXT_TICK, false);
+        }
     }
 
-
+    @Override
+    public boolean isPushedByFluid(FluidType type) {
+        return !this.entityData.get(PASTE);
+    }
 
     @Override
     protected void readAdditionalSaveData(CompoundTag pCompound) {

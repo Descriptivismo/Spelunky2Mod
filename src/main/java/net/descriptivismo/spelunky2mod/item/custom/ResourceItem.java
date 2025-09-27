@@ -2,10 +2,13 @@ package net.descriptivismo.spelunky2mod.item.custom;
 
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
+import net.minecraft.commands.CommandFunction;
+import net.minecraft.commands.Commands;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -35,8 +38,10 @@ public class ResourceItem extends Item {
             else
                 resourcesToGive = new ItemStack(Items.COAL, 1);
 
-
-            pPlayer.getInventory().add(resourcesToGive);
+            if (!pPlayer.getInventory().add(resourcesToGive))
+            {
+                pPlayer.drop(resourcesToGive, false);
+            }
         }
 
         pLevel.playSound(null, pPlayer.position().x, pPlayer.position().y, pPlayer.position().z,
