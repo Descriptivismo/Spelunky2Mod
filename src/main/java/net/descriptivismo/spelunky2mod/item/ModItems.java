@@ -3,6 +3,7 @@ package net.descriptivismo.spelunky2mod.item;
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
 import net.descriptivismo.spelunky2mod.item.custom.BombItem;
+import net.descriptivismo.spelunky2mod.item.custom.PowerpackItem;
 import net.descriptivismo.spelunky2mod.item.custom.ResourceItem;
 import net.descriptivismo.spelunky2mod.item.custom.RopeItem;
 import net.minecraft.world.item.Item;
@@ -43,6 +44,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> PASTE = ITEMS.register("paste",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> POWERPACK = ITEMS.register("powerpack",
+            () -> new PowerpackItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus)
     {

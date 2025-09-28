@@ -17,4 +17,9 @@ public class ModModelLayers {
             "main"
     );
 
+    public static final ModelLayerLocation POWERPACK_LAYER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(Spelunky2Mod.MODID, "powerpack_layer"),
+            "main"
+    );
+
 }
