@@ -130,5 +130,11 @@
       "spelunky2mod:rope_toss_02",
       "spelunky2mod:rope_toss_03"
     ]
+  },
+  "equip": {
+    "subtitle": "sounds.spelunky2mod.equip",
+    "sounds": [
+      "spelunky2mod:equip"
+    ]
   }
 }

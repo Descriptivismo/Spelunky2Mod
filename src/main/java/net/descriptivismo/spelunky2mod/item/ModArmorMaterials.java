@@ -1,6 +1,7 @@
 package net.descriptivismo.spelunky2mod.item;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
+import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
@@ -11,7 +12,7 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     BACK_ITEM("back_item", 3600, new int[] {0, 0, 0, 0}, 0,
-            SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, () -> Ingredient.EMPTY);
+            ModSounds.EQUIP.get(), 0, 0, () -> Ingredient.EMPTY);
 
     private final String name;
     private final int durabilityMultiplier;

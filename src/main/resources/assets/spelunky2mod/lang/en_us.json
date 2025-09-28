@@ -41,5 +41,6 @@
   "sounds.spelunky2mod.fuse": "Bomb lit",
   "sounds.spelunky2mod.resource_get": "Item collected",
   "sounds.spelunky2mod.rope_attach": "Rope attaches",
-  "sounds.spelunky2mod.rope_toss": "Rope tossed"
+  "sounds.spelunky2mod.rope_toss": "Rope tossed",
+  "sounds.spelunky2mod.equip": "Back item equipped"
 }

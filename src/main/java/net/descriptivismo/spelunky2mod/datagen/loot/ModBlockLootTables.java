@@ -60,6 +60,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                         .add(LootItem.lootTableItem(ModItems.BOMB_BOX.get()).setWeight(204))
                         .add(LootItem.lootTableItem(Items.IRON_PICKAXE).setWeight(97))
                         .add(LootItem.lootTableItem(Items.CROSSBOW).setWeight(50))
+                        .add(LootItem.lootTableItem(ModItems.POWERPACK.get()).setWeight(20))
                 );
     }
 

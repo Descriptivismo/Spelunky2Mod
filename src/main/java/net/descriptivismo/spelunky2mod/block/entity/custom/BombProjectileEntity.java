@@ -27,6 +27,8 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
 
     private static final EntityDataAccessor<Boolean> PASTE =
             SynchedEntityData.defineId(BombProjectileEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> POWERPACK =
+            SynchedEntityData.defineId(BombProjectileEntity.class, EntityDataSerializers.BOOLEAN);
 
     public BombProjectileEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -42,12 +44,10 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
 
     @Override
     protected void defineSynchedData() {
-
         super.defineSynchedData();
 
-
         this.entityData.define(PASTE, false);
-
+        this.entityData.define(POWERPACK, false);
     }
 
     @Override
@@ -65,13 +65,17 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
         this.entityData.set(PASTE, true);
     }
 
+    public void setPowerpackBomb()
+    {
+        this.entityData.set(POWERPACK, true);
+    }
+
     @Override
     protected void onHitBlock(BlockHitResult pResult) {
 
         if (!this.level().isClientSide())
         {
             this.level().broadcastEntityEvent(this, ((byte) 3));
-
 
             BombEntity bomb = new BombEntity(ModEntities.BOMB.get(), this.level());
 
@@ -87,6 +91,8 @@ public class BombProjectileEntity extends ThrowableItemProjectile {
                 bomb.setPasteBomb();
             else
                 bomb.setDeltaMovement(0, this.getDeltaMovement().y, 0);
+            if (entityData.get(POWERPACK))
+                bomb.setPowerpackBomb();
 
             this.level().addFreshEntity(bomb);
 

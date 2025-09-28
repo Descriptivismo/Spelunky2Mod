@@ -28,7 +28,7 @@ public class SquishableMonster extends Monster {
                 double playerY = player.getBoundingBox().minY;
                 double monsterY = getBoundingBox().maxY;
 
-                if (monsterY - playerY < 0.05d && player.getDeltaMovement().y < this.getDeltaMovement().y) {
+                if (monsterY - playerY < 0.2d && player.getDeltaMovement().y < this.getDeltaMovement().y) {
                     ret = true;
                     this.hurt(damageSources().playerAttack(player), 4);
                     player.jumpFromGround();

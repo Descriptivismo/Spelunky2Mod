@@ -41,8 +41,14 @@ public class BombRenderer extends EntityRenderer<BombEntity> {
     public void render(BombEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {
         pPoseStack.pushPose();
         pPoseStack.mulPose(Axis.XP.rotationDegrees(180.0F));
-        pPoseStack.translate(0.0F, -3.0F, 0.0F);
-        pPoseStack.scale(2F, 2F, 2F);
+        if (pEntity.isPowerpackBomb()) {
+            pPoseStack.translate(0.0F, -4.5F, 0.0F);
+            pPoseStack.scale(3F, 3F, 3F);
+        }
+        else {
+            pPoseStack.translate(0.0F, -3.0F, 0.0F);
+            pPoseStack.scale(2F, 2F, 2F);
+        }
         this.model.setupAnim(pEntity, 0.0F, 0.0F, pEntity.tickCount + pPartialTicks, 0, 0);
         VertexConsumer vertexconsumer = pBuffer.getBuffer(this.model.renderType(getTextureLocation(pEntity)));
         this.model.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);

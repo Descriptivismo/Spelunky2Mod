@@ -34,6 +34,10 @@ public class BombItem extends Item {
             {
                 bomb.setPasteBomb();
             }
+            if (pPlayer.getInventory().getArmor(2).is(ModItems.POWERPACK.get()))
+            {
+                bomb.setPowerpackBomb();
+            }
 
             pLevel.addFreshEntity(bomb);
         }

@@ -28,6 +28,8 @@ public class BombEntity extends Entity {
             SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> PASTE =
             SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> POWERPACK =
+            SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> EXPLODING =
             SynchedEntityData.defineId(BombEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> EXPLODING_NEXT_TICK =
@@ -39,11 +41,14 @@ public class BombEntity extends Entity {
         super(pEntityType, pLevel);
     }
 
+
+
     @Override
     protected void defineSynchedData() {
 
         this.entityData.define(COUNTDOWN, countdownLength);
         this.entityData.define(PASTE, false);
+        this.entityData.define(POWERPACK, false);
         this.entityData.define(EXPLODING, false);
         this.entityData.define(EXPLODING_NEXT_TICK, false);
 
@@ -59,6 +64,16 @@ public class BombEntity extends Entity {
         this.entityData.set(PASTE, true);
     }
 
+    public boolean isPowerpackBomb()
+    {
+        return this.entityData.get(POWERPACK);
+    }
+
+    public void setPowerpackBomb()
+    {
+        this.entityData.set(POWERPACK, true);
+    }
+
     @Override
     public boolean ignoreExplosion() {
 
@@ -72,7 +87,8 @@ public class BombEntity extends Entity {
 
     private void explode()
     {
-        level().explode(this, position().x, position().y, position().z, 3.0f,
+        float explosionRadius = isPowerpackBomb() ? 6.0f : 3.0f;
+        level().explode(this, position().x, position().y, position().z, explosionRadius,
                 Level.ExplosionInteraction.TNT);
         kill();
     }

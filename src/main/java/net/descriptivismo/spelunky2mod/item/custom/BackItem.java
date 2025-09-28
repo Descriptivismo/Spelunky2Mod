@@ -1,6 +1,7 @@
 package net.descriptivismo.spelunky2mod.item.custom;
 
 import net.descriptivismo.spelunky2mod.item.ModArmorMaterials;
+import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -27,7 +28,7 @@ public class BackItem extends ArmorItem {
 
     // make this the spelunky equip sound
     public SoundEvent getEquipSound() {
-        return SoundEvents.ARMOR_EQUIP_GENERIC;
+        return ModSounds.EQUIP.get();
     }
 
     public EquipmentSlot getEquipmentSlot() {
