@@ -75,6 +75,12 @@ public class ModBlocks {
                     .sound(SoundType.WOOL)
             ));
 
+    public static final RegistryObject<Block> PLATFORM = registerBlock("platform",
+            () -> new PlatformBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_ROOTS)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)
+            ));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

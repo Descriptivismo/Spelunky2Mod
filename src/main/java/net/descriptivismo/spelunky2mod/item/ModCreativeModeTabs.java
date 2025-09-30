@@ -41,6 +41,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ITEM_PICKUP.get());
                         output.accept(ModBlocks.DWELLING_ROCK.get());
                         output.accept(ModBlocks.DWELLING_WOOD.get());
+                        output.accept(ModBlocks.PLATFORM.get());
                         output.accept(ModBlocks.BONE_BLOCK.get());
                         output.accept(ModBlocks.ARROW_TRAP.get());
                         output.accept(ModBlocks.CRATE.get());
