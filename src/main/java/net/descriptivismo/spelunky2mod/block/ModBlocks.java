@@ -79,6 +79,15 @@ public class ModBlocks {
             () -> new PlatformBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_ROOTS)
                     .noOcclusion()
                     .sound(SoundType.WOOD)
+                    .forceSolidOn()
+            ));
+
+    public static final RegistryObject<Block> SPIKES = registerBlock("spikes",
+            () -> new SpikesBlock(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK)
+                    .noOcclusion()
+                    .noCollission()
+                    .strength(2f, 1.0f)
+                    .sound(SoundType.POINTED_DRIPSTONE)
             ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)

@@ -141,5 +141,13 @@
     "sounds": [
       "spelunky2mod:backpack_warn"
     ]
+  },
+  "impale": {
+    "subtitle": "sounds.spelunky2mod.impale",
+    "sounds": [
+      "impale_01",
+      "impale_02",
+      "impale_03"
+    ]
   }
 }

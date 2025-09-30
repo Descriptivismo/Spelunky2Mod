@@ -49,6 +49,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createSingleItemTable(ModBlocks.GOLD_BAR.get()));
         this.add(ModBlocks.PLATFORM.get(),
                 block -> createSilkTouchOnlyTable(ModBlocks.PLATFORM.get()));
+        this.add(ModBlocks.SPIKES.get(),
+                block -> createSilkTouchOnlyTable(ModBlocks.SPIKES.get()));
     }
 
     protected LootTable.Builder createCrateDrops(Block pBlock)

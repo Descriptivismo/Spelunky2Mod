@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-29T21:13:26.3901783	Tags for minecraft:block mod id spelunky2mod
+// 1.20.1	2025-09-30T16:36:20.1108893	Tags for minecraft:block mod id spelunky2mod
 40d38531cc026e93f0c4937660ba961ea2deb96d data/minecraft/tags/blocks/climbable.json
 71885e8ecc0af7bfb4f0ba9db1f1f6b11d0c37c8 data/minecraft/tags/blocks/mineable/axe.json
-ad09b16efd381c38b15d8a790f6f72a8bd0f0b23 data/minecraft/tags/blocks/mineable/pickaxe.json
+4c54cfa67a05f4efdb905339a5f49c148205ebdd data/minecraft/tags/blocks/mineable/pickaxe.json

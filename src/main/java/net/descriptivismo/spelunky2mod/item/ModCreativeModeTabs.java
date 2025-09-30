@@ -44,6 +44,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PLATFORM.get());
                         output.accept(ModBlocks.BONE_BLOCK.get());
                         output.accept(ModBlocks.ARROW_TRAP.get());
+                        output.accept(ModBlocks.SPIKES.get());
                         output.accept(ModBlocks.CRATE.get());
                         output.accept(ModBlocks.GOLD_BAR.get());
                         output.accept(ModBlocks.UDJAT_CHEST.get());
