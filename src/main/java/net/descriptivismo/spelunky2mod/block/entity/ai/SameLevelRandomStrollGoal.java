@@ -28,7 +28,6 @@ public class SameLevelRandomStrollGoal extends RandomStrollGoal {
             Vec3 vec3 = LandRandomPos.getPos(this.mob, 15, 7);
             return vec3 == null ? super.getPosition() : vec3;
         } else {
-            System.out.println("glee");
             return getPos(this.mob, 10, 0);
         }
     }

@@ -15,7 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class PlatformBlock extends Block {
 
     protected static final VoxelShape SHAPE = Shapes.or(
-            Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 16.0D));
+            Block.box(0.0D, 7.0D, 0.0D, 16.0D, 16.0D, 16.0D));
 
     public PlatformBlock(Properties pProperties) {
         super(pProperties);
@@ -23,7 +23,7 @@ public class PlatformBlock extends Block {
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return super.getShape(pState, pLevel, pPos, pContext);
+        return SHAPE;
     }
 
     @Override
