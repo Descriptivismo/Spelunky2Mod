@@ -145,9 +145,9 @@
   "impale": {
     "subtitle": "sounds.spelunky2mod.impale",
     "sounds": [
-      "impale_01",
-      "impale_02",
-      "impale_03"
+      "spelunky2mod:impale_01",
+      "spelunky2mod:impale_02",
+      "spelunky2mod:impale_03"
     ]
   }
 }

@@ -30,6 +30,8 @@ public class SpikesBlock extends Block {
 
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
     {
+        if (pLevel.isClientSide()) return;
+
         List<Entity> entities = pLevel.getEntitiesOfClass(Entity.class,
                 AABB.ofSize(pPos.getCenter(), 1d, 1d, 1d), EntitySelector.NO_SPECTATORS);
 
@@ -37,10 +39,10 @@ public class SpikesBlock extends Block {
         {
             if (!(entity instanceof LivingEntity)) return;
             if (entity.getDeltaMovement().y < -0.1f && !((LivingEntity) entity).onClimbable()
-                && entity.position().y > pPos.getY() + 0.5f)
+                && entity.position().y > pPos.getY() + 0.5f && !entity.isInvulnerable())
             {
                 entity.hurt(entity.damageSources().stalagmite(), 10);
-                pLevel.playSeededSound(null, pPos.getX(), pPos.getY(), pPos.getZ(),
+                pLevel.playSeededSound(null, pPos.getX()+ 0.5f, pPos.getY() + 0.5f, pPos.getZ() + 0.5f,
                         ModSounds.IMPALE.get(), SoundSource.BLOCKS, 1f, 1f, pRandom.nextInt());
             }
         }
