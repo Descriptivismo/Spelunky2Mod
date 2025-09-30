@@ -1,5 +1,6 @@
 package net.descriptivismo.spelunky2mod.block.entity.custom;
 
+import net.descriptivismo.spelunky2mod.block.entity.ai.SameLevelRandomStrollGoal;
 import net.descriptivismo.spelunky2mod.block.entity.animations.ModAnimationDefinitions;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -21,6 +22,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.storage.loot.predicates.DamageSourceCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.phys.Vec3;
@@ -159,9 +161,9 @@ public class SnakeEntity extends SquishableMonster {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new WaterAvoidingRandomStrollGoal(this, 1));
 
-        //this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, false));
+        this.goalSelector.addGoal(0, new SameLevelRandomStrollGoal(this, 1, 1));
+
     }
 
     public static AttributeSupplier.Builder createAttributes()
