@@ -136,5 +136,10 @@
     "sounds": [
       "spelunky2mod:equip"
     ]
+  },
+  "backpack_warn": {
+    "sounds": [
+      "spelunky2mod:backpack_warn"
+    ]
   }
 }

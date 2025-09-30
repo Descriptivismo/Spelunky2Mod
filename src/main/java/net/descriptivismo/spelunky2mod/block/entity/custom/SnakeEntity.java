@@ -55,8 +55,6 @@ public class SnakeEntity extends SquishableMonster {
 
         //if (this.level().isClientSide)
         {
-            System.out.println(walkAnimationState.isStarted() + " " + attackAnimationState.isStarted());
-
             setUpAnimationStates();
 
             List<Entity> entities = level().getEntities(this, getBoundingBox().inflate(0.1d));
@@ -82,7 +80,6 @@ public class SnakeEntity extends SquishableMonster {
     private void setUpAnimationStates()
     {
         if (isAttacking()) {
-            System.out.println("kill me");
             if (!attackAnimationState.isStarted())
                 entityData.set(ATTACK_TIMEOUT, 10);
             this.attackAnimationState.startIfStopped(this.tickCount);
@@ -99,8 +96,6 @@ public class SnakeEntity extends SquishableMonster {
             this.walkAnimationState.startIfStopped(this.tickCount);
             this.attackAnimationState.stop();
         }
-
-        System.out.println(entityData.get(ATTACK_TIMEOUT));
     }
 
     @Override
@@ -144,7 +139,6 @@ public class SnakeEntity extends SquishableMonster {
             entityData.set(ATTACK_TIMEOUT, 10);
             attackAnimationState.start(this.tickCount);
             walkAnimationState.stop();
-            System.out.println(attackAnimationState.isStarted() + " " + entityData.get(ATTACK_TIMEOUT));
         }
         this.entityData.set(ATTACKING, attacking);
 
