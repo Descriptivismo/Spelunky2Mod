@@ -6,6 +6,7 @@ import net.descriptivismo.spelunky2mod.block.entity.ModBlockEntities;
 import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
 import net.descriptivismo.spelunky2mod.block.entity.client.BombRenderer;
 import net.descriptivismo.spelunky2mod.block.entity.client.SnakeRenderer;
+import net.descriptivismo.spelunky2mod.block.entity.client.SpiderRenderer;
 import net.descriptivismo.spelunky2mod.item.ModCreativeModeTabs;
 import net.descriptivismo.spelunky2mod.item.ModItems;
 import net.descriptivismo.spelunky2mod.sound.ModSounds;
@@ -91,6 +92,7 @@ public class Spelunky2Mod
         {
             EntityRenderers.register(ModEntities.SNAKE.get(), SnakeRenderer::new);
             EntityRenderers.register(ModEntities.BOMB.get(), BombRenderer::new);
+            EntityRenderers.register(ModEntities.SPIDER.get(), SpiderRenderer::new);
 
             EntityRenderers.register(ModEntities.BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
         }

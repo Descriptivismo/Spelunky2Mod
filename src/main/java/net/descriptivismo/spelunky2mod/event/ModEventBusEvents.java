@@ -5,6 +5,7 @@ import net.descriptivismo.spelunky2mod.block.entity.ModEntities;
 import net.descriptivismo.spelunky2mod.block.entity.client.ModModelLayers;
 import net.descriptivismo.spelunky2mod.block.entity.client.SnakeModel;
 import net.descriptivismo.spelunky2mod.block.entity.custom.SnakeEntity;
+import net.descriptivismo.spelunky2mod.block.entity.custom.SpiderEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -18,6 +19,7 @@ public class ModEventBusEvents {
     public static void registerAttributes(EntityAttributeCreationEvent event)
     {
         event.put(ModEntities.SNAKE.get(), SnakeEntity.createAttributes().build());
+        event.put(ModEntities.SPIDER.get(), SpiderEntity.createAttributes().build());
     }
 
 }

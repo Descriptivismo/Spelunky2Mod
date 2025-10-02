@@ -39,7 +39,8 @@ public class SpikesBlock extends Block {
         {
             if (!(entity instanceof LivingEntity)) return;
             if (entity.getDeltaMovement().y < -0.1f && !((LivingEntity) entity).onClimbable()
-                && entity.position().y > pPos.getY() + 0.5f && !entity.isInvulnerable())
+                && entity.position().y > pPos.getY() + 0.5f && !entity.isInvulnerable()
+                && ((LivingEntity) entity).getHealth() > 0.0f)
             {
                 entity.hurt(entity.damageSources().stalagmite(), 10);
                 pLevel.playSeededSound(null, pPos.getX()+ 0.5f, pPos.getY() + 0.5f, pPos.getZ() + 0.5f,

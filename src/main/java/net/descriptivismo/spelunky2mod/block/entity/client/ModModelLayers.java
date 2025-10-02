@@ -22,4 +22,9 @@ public class ModModelLayers {
             "main"
     );
 
+    public static final ModelLayerLocation SPIDER_LAYER = new ModelLayerLocation(
+            ResourceLocation.fromNamespaceAndPath(Spelunky2Mod.MODID, "spider_layer"),
+            "main"
+    );
+
 }

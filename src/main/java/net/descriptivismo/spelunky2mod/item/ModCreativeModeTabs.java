@@ -57,6 +57,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.spelunky_creatures_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SNAKE_SPAWN_EGG.get());
+                        output.accept(ModItems.SPIDER_SPAWN_EGG.get());
                     })
                     .build());
 

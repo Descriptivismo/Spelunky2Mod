@@ -29,6 +29,9 @@ public class ModItems {
     public static final RegistryObject<Item> SNAKE_SPAWN_EGG = ITEMS.register("snake_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SNAKE, 0x9dc157, 0xf2f282,
                     new Item.Properties()));
+    public static final RegistryObject<Item> SPIDER_SPAWN_EGG = ITEMS.register("spider_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.SPIDER, 0x857347, 0xa14c19,
+                    new Item.Properties()));
 
     public static final RegistryObject<Item> BOMB = ITEMS.register("bomb",
             () -> new BombItem(new Item.Properties()));

@@ -2,10 +2,7 @@ package net.descriptivismo.spelunky2mod.event;
 
 import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.entity.ModBlockEntities;
-import net.descriptivismo.spelunky2mod.block.entity.client.BombModel;
-import net.descriptivismo.spelunky2mod.block.entity.client.ModModelLayers;
-import net.descriptivismo.spelunky2mod.block.entity.client.PowerpackModel;
-import net.descriptivismo.spelunky2mod.block.entity.client.SnakeModel;
+import net.descriptivismo.spelunky2mod.block.entity.client.*;
 import net.descriptivismo.spelunky2mod.block.entity.renderer.ItemPickupBlockEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -26,6 +23,7 @@ public class ModEventBusClientEvents
     {
         event.registerLayerDefinition(ModModelLayers.SNAKE_LAYER, SnakeModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.BOMB_LAYER, BombModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.SPIDER_LAYER, SpiderModel::createBodyLayer);
 
         event.registerLayerDefinition(ModModelLayers.POWERPACK_LAYER, PowerpackModel::createBodyLayer);
     }

@@ -10,6 +10,7 @@
   "item.spelunky2mod.paste": "Paste",
   "item.spelunky2mod.powerpack": "Powerpack",
   "item.spelunky2mod.snake_spawn_egg": "Snake Spawn Egg",
+  "item.spelunky2mod.spider_spawn_egg": "Spider Spawn Egg",
   "item.minecraft.iron_pickaxe": "Mattock",
 
   "block.spelunky2mod.dwelling_rock": "Dwelling Rock",
@@ -25,6 +26,7 @@
   "block.spelunky2mod.spikes": "Spikes",
 
   "entity.spelunky2mod.snake": "Snake",
+  "entity.spelunky2mod.spider": "Spider",
   "entity.spelunky2mod.bomb": "Bomb",
 
   "creativetab.spelunky_items_tab": "Spelunky Items",

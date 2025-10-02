@@ -4,6 +4,7 @@ import net.descriptivismo.spelunky2mod.Spelunky2Mod;
 import net.descriptivismo.spelunky2mod.block.entity.custom.BombEntity;
 import net.descriptivismo.spelunky2mod.block.entity.custom.BombProjectileEntity;
 import net.descriptivismo.spelunky2mod.block.entity.custom.SnakeEntity;
+import net.descriptivismo.spelunky2mod.block.entity.custom.SpiderEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -28,6 +29,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<BombProjectileEntity>> BOMB_PROJECTILE =
             ENTITY_TYPES.register("bomb_projectile", () -> EntityType.Builder.<BombProjectileEntity>of(BombProjectileEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("bomb_projectile"));
+
+    public static final RegistryObject<EntityType<SpiderEntity>> SPIDER =
+            ENTITY_TYPES.register("spider", () -> EntityType.Builder.of(SpiderEntity::new, MobCategory.MONSTER)
+                    .sized(0.3f, 0.31f).build("spider"));
 
     public static void register(IEventBus eventBus)
     {

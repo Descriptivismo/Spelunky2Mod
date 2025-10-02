@@ -77,7 +77,7 @@ public class PowerpackItem extends BackItem {
         if (player.level().isClientSide()) return;
 
         if (player.getInventory().getArmor(2).is(ModItems.POWERPACK.get())
-            && player.getItemInHand(player.swingingArm).isEmpty())
+                && player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
         {
             event.setCanceled(true);
             Entity entity = event.getTarget();
