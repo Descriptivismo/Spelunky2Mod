@@ -149,5 +149,28 @@
       "spelunky2mod:impale_02",
       "spelunky2mod:impale_03"
     ]
+  },
+  "spider_drop": {
+    "subtitle": "sounds.spelunky2mod.spider_drop",
+    "sounds": [
+      "spelunky2mod:spider_drop"
+    ]
+  },
+  "spider_jump": {
+    "subtitle": "sounds.spelunky2mod.spider_jump",
+    "sounds": [
+      "spelunky2mod:spider01",
+      "spelunky2mod:spider02",
+      "spelunky2mod:spider03"
+    ]
+  },
+  "spider_die": {
+    "subtitle": "sounds.spelunky2mod.spider_die",
+    "sounds": [
+      "spelunky2mod:splat01",
+      "spelunky2mod:splat03",
+      "spelunky2mod:splat05",
+      "spelunky2mod:splat06"
+    ]
   }
 }

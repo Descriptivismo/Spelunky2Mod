@@ -47,5 +47,8 @@
   "sounds.spelunky2mod.rope_attach": "Rope attaches",
   "sounds.spelunky2mod.rope_toss": "Rope tossed",
   "sounds.spelunky2mod.equip": "Back item equipped",
-  "sounds.spelunky2mod.impale": "Spikes impale"
+  "sounds.spelunky2mod.impale": "Spikes impale",
+  "sounds.spelunky2mod.spider_die": "Spider hurts",
+  "sounds.spelunky2mod.spider_drop": "Spider drops",
+  "sounds.spelunky2mod.spider_jump": "Spider jumps"
 }
